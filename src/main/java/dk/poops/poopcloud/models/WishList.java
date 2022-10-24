@@ -1,8 +1,14 @@
 package dk.poops.poopcloud.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "wishlist")
 public class WishList {
 
+  @Id
   private int id;
+
   private String name;
 
   public WishList() {

@@ -1,22 +1,25 @@
 package dk.poops.poopcloud.models;
 
+import javax.persistence.*;
 import java.awt.*;
 
+@Entity
 public class Wish {
 
+  @Id
   private int id;
   private String name;
   private double price;
   private String link;
   private String description;
-  private Image image;
+  private String image;
   private int list_id;
 
   public Wish(){
   }
 
   //With IMG
-  public Wish(int id, String name, double price, String link, String description, Image image, int list_id) {
+  public Wish(int id, String name, double price, String link, String description, String image, int list_id) {
     this.id = id;
     this.name = name;
     this.price = price;
@@ -56,7 +59,7 @@ public class Wish {
     return description;
   }
 
-  public Image getImage() {
+  public String getImage() {
     return image;
   }
 
@@ -84,7 +87,7 @@ public class Wish {
     this.description = description;
   }
 
-  public void setImage(Image image) {
+  public void setImage(String image) {
     this.image = image;
   }
 
