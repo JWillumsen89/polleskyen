@@ -8,5 +8,6 @@ public class PoopController {
   @GetMapping("/")
   private String index(){
     return "index";
+
   }
 }
