@@ -9,5 +9,4 @@ public class PoopcloudApplication {
   public static void main(String[] args) {
     SpringApplication.run(PoopcloudApplication.class, args);
   }
-
 }
