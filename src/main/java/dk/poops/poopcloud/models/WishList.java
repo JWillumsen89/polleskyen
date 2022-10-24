@@ -31,9 +31,6 @@ public class WishList {
 
   @Override
   public String toString() {
-    return "WishList{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        '}';
+    return id + " " + name;
   }
 }
