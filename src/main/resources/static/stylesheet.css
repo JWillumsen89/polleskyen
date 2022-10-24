@@ -1,0 +1,12 @@
+.grid-container {
+    background-color: saddlebrown;
+    display: flow;
+    width: auto;
+    height: auto;
+}
+
+h1{
+    font-size: 40px;
+    color: whitesmoke;
+    text-align: center;
+}
