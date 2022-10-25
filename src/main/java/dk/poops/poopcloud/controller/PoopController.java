@@ -62,7 +62,7 @@ public class PoopController {
     return "redirect:/";
   }
 
-  @RequestMapping("/")
+
   @GetMapping("/showwishlist/createwish/{id}")
   public String showWishCreateForm(@PathVariable("id")int id, Model model){
     model.addAttribute("wishlist",wishListService.findWishListById(id));
