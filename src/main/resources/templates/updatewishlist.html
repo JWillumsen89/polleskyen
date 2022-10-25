@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Opdater en Pølleliste</title>
+    <title>Pølleskyen - Opdater ønskeliste</title>
 </head>
 <body>
 <h1>Hello</h1>
@@ -17,10 +17,10 @@
 
     <form action="/updatewishlist" method="post">
         <div class="form-group">
-            <input type="text" name="name" th:value="${item.name}" class="form-control">
+            <input type="text" name="name" th:value="${name}" class="form-control">
         </div>
 
-        <button type="Opdater" class="btn btn-primary">Submit</button>
+        <button type="Opdater" class="btn btn-primary" th:placeholder="${name}">Submit</button>
     </form>
 
 </div>

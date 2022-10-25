@@ -21,6 +21,13 @@ public class PoopController {
     model.addAttribute("wishlists", wishListService.fetchAllWishLists());
     return "index";
   }
+
+  @GetMapping("/createwish/{id}")
+  public String createWish(@PathVariable("id")int id, Model model) {
+    model.addAttribute("id",id);
+    return "createwish";
+  }
+
   @GetMapping("/updatewishlist/{id}")
   public String updatewishlist(@PathVariable("id")int id, Model model) {
     model.addAttribute("id",id);

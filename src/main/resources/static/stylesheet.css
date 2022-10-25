@@ -1,12 +1,24 @@
 .grid-container {
     background-color: saddlebrown;
-    display: flow;
-    width: auto;
-    height: auto;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+
+
+}
+
+.grid-view {
+    grid-template-columns: auto auto auto auto;
+    overflow: hidden;
+    grid-gap: 20px;
 }
 
 h1{
     font-size: 40px;
     color: whitesmoke;
     text-align: center;
+}
+
+{
+    color: whitesmoke;
 }
