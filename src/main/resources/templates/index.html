@@ -14,7 +14,7 @@
 <p th:each="wishlist :${wishlists}">
     <span th:text="${wishlist.id}"></span>
     <span th:text="${wishlist.name}"></span>
-    <a th:href="@{'/showwishlist/' +${wishlist.id}}"><input type="submit" value="Edit wishlist"></a>
+    <a th:href="@{'/showwishlist/' +${wishlist.id}}"><input type="submit" value="Display Wishlist"></a>
     <a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="submit" value="Delete WishList"></a>
 
     <!-- <a th:href="@{'/updatewishlist/' +${wishlist.id}}" target="myiframe"><input type="button" value="iFrame" onclick="toggle(this)"></a>

@@ -30,6 +30,7 @@ public class PoopController {
   public String showWishList(@PathVariable("id")int id, Model model) {
     model.addAttribute("id",id);
     model.addAttribute("wishlist",wishListService.findWishListById(id));
+
     return "showwishlist";
   }
 
