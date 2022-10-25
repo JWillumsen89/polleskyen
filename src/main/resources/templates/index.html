@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pølleskyen</title>
-    <link rel="stylesheet" th:href="@{stylesheet.css}" href="../static/stylesheet.css">
+    <link rel="stylesheet" th:href="@{../static/css/stylesheet.css}" href="../static/css/stylesheet.css">
+
 </head>
 <body>
-<h1>Test</h1>
+<nav class="navbar">
+    <div class="navbar_container">
+        <div class="navbar_logo">
+            <a href="/">
+            <img th:src="@{images/poopcloud.png}" src="../static/images/poopcloud.png" style="height: 80px; width: 100px">
+            </a>
+        </div>
+        <h1>Forside</h1>
+    </div>
+</nav>
+
 
 <a href="createwishlist">Opret en PølleListe</a>
 
 <p th:each="wishlist :${wishlists}">
-<span th:text="${wishlist.id}"></span>
-<span th:text="${wishlist.name}"></span>
-    <a th:href="@{'/showwishlist/' +${wishlist.id}}"><input type="submit" value="Edit wishlist" ></a>
-    <a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="submit" value="Delete WishList" ></a>
+    <span th:text="${wishlist.id}"></span>
+    <span th:text="${wishlist.name}"></span>
+    <a th:href="@{'/showwishlist/' +${wishlist.id}}"><input type="submit" value="Edit wishlist"></a>
+    <a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="submit" value="Delete WishList"></a>
 
     <!-- <a th:href="@{'/updatewishlist/' +${wishlist.id}}" target="myiframe"><input type="button" value="iFrame" onclick="toggle(this)"></a>
     <iframe id="myiframe" style="height:450px;width:100%;" hidden></iframe>-->
