@@ -25,6 +25,7 @@ public class PoopController {
   @GetMapping("/createwish/{id}")
   public String createWish(@PathVariable("id")int id, Model model) {
     model.addAttribute("id",id);
+    model.addAttribute("wishlist",wishListService.findWishListById(id));
     return "createwish";
   }
 

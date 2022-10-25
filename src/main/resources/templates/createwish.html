@@ -5,10 +5,12 @@
     <title>Pølleskyen</title>
 </head>
 <body>
+<p th:text="${id}"></p>
+<p th:text="${wishlist.name}"></p>
 
 
 <a th:href="@{'/updatewishlist/' +${id}}"><input type="submit" value="Update WishList name" ></a>
-<p th:text="${id}"></p>
+
 
 
 </body>
