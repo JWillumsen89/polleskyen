@@ -17,6 +17,7 @@ public class PoopController {
 
   @Autowired
   WishListService wishListService;
+  @Autowired
   WishService wishService;
 
   @GetMapping("/")
@@ -63,19 +64,16 @@ public class PoopController {
     return "redirect:/";
   }
 
-  @GetMapping("/createwish/{id}")
+  @GetMapping("/showwishlist/createwish/{id}")
   public String showWishCreateForm(@PathVariable("id")int id, Model model){
     model.addAttribute("wishlist",wishListService.findWishListById(id));
     return "createwish";
   }
 
-  @PostMapping("/createwish")
+  @PostMapping("/showwishlist/createwish")
   public String createWish(@ModelAttribute Wish wish){
     wishService.saveWish(wish);
     return "redirect:/showwishlist/" + wish.getList_id();
   }
-
-
-
 
 }
