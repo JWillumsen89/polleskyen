@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Pølleskyen</title>
-
+    <link rel="stylesheet" type="text/css" th:href="@{../css/style.css}" href="../static/css/style.css">
 </head>
 
 <body>
-
+<div th:insert="fragments/header.html"></div>
 <h1>Lav en ny Pølleliste</h1>
 
 <form action="createwishlist" method="post">
