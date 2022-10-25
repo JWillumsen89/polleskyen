@@ -16,4 +16,10 @@ public class WishListService {
   public List<WishList> fetchAllWishLists() {
     return wishListJPARepo.findAll();
   }
+
+  public void saveWishList(WishList wishList){
+    wishListJPARepo.save(wishList);
+
+  }
+
 }
