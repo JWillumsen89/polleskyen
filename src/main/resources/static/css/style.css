@@ -1,4 +1,10 @@
 /*NAVBAR*/
+footer{
+    background-image: url("../images/footerClouds.png");
+    background-size: cover;
+    background-position: center;
+    height: 1366px;
+}
 
 * {
     box-sizing: border-box;
@@ -8,7 +14,7 @@
 }
 
 .navbar {
-    background: saddlebrown;
+    background: #B1D3F1;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -19,7 +25,7 @@
 }
 
 .navbar_container {
-    background-image: linear-gradient(to bottom right, saddlebrown, brown);
+    background-image: linear-gradient(to bottom right, #B1D3F1, #E3F2FF);
     display: flex;
     justify-content: space-between;
     height: 80px;
