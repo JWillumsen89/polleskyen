@@ -3,11 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /*NAVBAR*/
+    footer{
+      background-image: url("../static/images/footerClouds.png");
+      background-size: cover;
+      background-position: center;
+      height: 1366px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background: #B1D3F1;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .navbar_container {
+      background-image: linear-gradient(to bottom right, #B1D3F1, #E3F2FF);
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      z-index: 1;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 50px;
+    }
+
+    .navbar_logo{
+      margin-left: -30px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+    }
+  </style>
   <title>Pølleskyen</title>
-  <link rel="stylesheet" th:href="@{https://poopcloud.azurewebsites.net/css/style.css}" href="https://poopcloud.azurewebsites.net/css/style.css">
+
+
 </head>
 <body>
-<div  th:insert="/fragments/header.html"></div>
+<div class="navbar">
+  <div class="navbar_container">
+    <div class="navbar_logo">
+      <a href="/">
+        <img th:src="@{https://i.imgur.com/3nzMX1b.png}" src="https://i.imgur.com/3nzMX1b.png" style="height: 80px; width: 100px">
+      </a>
+    </div>
+  </div>
+</div>
 
 
 <h1>Lav en ny Pølle</h1>
