@@ -46,6 +46,12 @@ public class PoopController {
     return "redirect:/";
   }
 
+  @GetMapping("/deletewishlist/{id}")
+  public String deleteWishList(@PathVariable("id")int id){
+    wishListService.deleteWishList(id);
+    return "redirect:/";
+  }
+
 
 
 
