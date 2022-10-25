@@ -1,17 +1,30 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pølleskyen</title>
+    <title>Title</title>
 </head>
 <body>
-<p th:text="${id}"></p>
-<p th:text="${wishlist.name}"></p>
 
+<h1>Lav en ny Pølle</h1>
 
-<a th:href="@{'/updatewishlist/' +${wishlist.id}}"><input type="submit" value="Update WishList name" ></a>
-
-
+<form action="createwish" method="post">
+  <label>Navn:
+    <input type="text" name="name" placeholder="Giv din Pølle et navn" required>
+  </label>
+  <label>Pris:
+    <input type="number" name="price" placeholder="Giv din Pølle en pris">
+  </label>
+  <label>Link:
+    <input type="url" name="link" placeholder="Giv link til din Pølle">
+  </label>
+  <label>Beskrivelse:
+    <input type="text" name="description" placeholder="Beskriv din Pølle">
+  </label>
+  <input type="hidden" name="list_id" th:value="${wishlist.id}">
+  <input type="submit" value="Opret din PølleListe">
+</form>
 
 </body>
 </html>

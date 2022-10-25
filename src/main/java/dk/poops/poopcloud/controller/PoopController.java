@@ -1,7 +1,9 @@
 package dk.poops.poopcloud.controller;
 
+import dk.poops.poopcloud.models.Wish;
 import dk.poops.poopcloud.models.WishList;
 import dk.poops.poopcloud.service.WishListService;
+import dk.poops.poopcloud.service.WishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,7 @@ public class PoopController {
 
   @Autowired
   WishListService wishListService;
+  WishService wishService;
 
   @GetMapping("/")
   public String index(Model model){
@@ -22,15 +25,15 @@ public class PoopController {
     return "index";
   }
 
-  @GetMapping("/createwish/{id}")
-  public String createWish(@PathVariable("id")int id, Model model) {
+  @GetMapping("/showwishlist/{id}")
+  public String showWishList(@PathVariable("id")int id, Model model) {
     model.addAttribute("id",id);
     model.addAttribute("wishlist",wishListService.findWishListById(id));
-    return "createwish";
+    return "showwishlist";
   }
 
   @GetMapping("/updatewishlist/{id}")
-  public String updatewishlist(@PathVariable("id")int id, Model model) {
+  public String updateWishlist(@PathVariable("id")int id, Model model) {
     model.addAttribute("id",id);
     model.addAttribute("wishlist",wishListService.findWishListById(id));
     return "updatewishlist";
@@ -42,7 +45,7 @@ public class PoopController {
   }
 
   @PostMapping("/createwishlist")
-  public String createWislist(@ModelAttribute WishList wishList){
+  public String createWishlist(@ModelAttribute WishList wishList){
     wishListService.saveWishList(wishList);
 
     return "redirect:/";
@@ -51,13 +54,25 @@ public class PoopController {
   public String saveWishlist(@ModelAttribute WishList wishList){
     wishListService.saveWishList(wishList);
 
-    return "redirect:/createwish/" + wishList.getId();
+    return "redirect:/showwishlist/" + wishList.getId();
   }
 
   @GetMapping("/deletewishlist/{id}")
   public String deleteWishList(@PathVariable("id")int id){
     wishListService.deleteWishList(id);
     return "redirect:/";
+  }
+
+  @GetMapping("/createwish/{id}")
+  public String showWishCreateForm(@PathVariable("id")int id, Model model){
+    model.addAttribute("wishlist",wishListService.findWishListById(id));
+    return "createwish";
+  }
+
+  @PostMapping("/createwish")
+  public String createWish(@ModelAttribute Wish wish){
+    wishService.saveWish(wish);
+    return "redirect:/showwishlist/" + wish.getList_id();
   }
 
 

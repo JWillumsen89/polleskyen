@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.awt.*;
 
 @Entity
+@Table(name = "wishes")
 public class Wish {
 
   @Id

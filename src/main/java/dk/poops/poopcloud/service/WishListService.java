@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class WishListService {
+public class
+WishListService {
 
   @Autowired
   WishListJPARepo wishListJPARepo;
