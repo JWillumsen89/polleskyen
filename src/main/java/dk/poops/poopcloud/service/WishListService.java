@@ -22,6 +22,11 @@ public class WishListService {
 
   }
 
+  public void deleteWishList(int id){
+      wishListJPARepo.deleteById(id);
+
+  }
+
     public WishList findWishListById(int id){
      return wishListJPARepo.getById(id);
   }
