@@ -12,24 +12,11 @@ public class Wish {
   private double price;
   private String link;
   private String description;
-  private String image;
   private int list_id;
 
   public Wish(){
   }
 
-  //With IMG
-  public Wish(int id, String name, double price, String link, String description, String image, int list_id) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.link = link;
-    this.description = description;
-    this.image = image;
-    this.list_id = list_id;
-  }
-
-  //Without IMG
   public Wish(int id, String name, double price, String link, String description, int list_id) {
     this.id = id;
     this.name = name;
@@ -58,11 +45,6 @@ public class Wish {
   public String getDescription() {
     return description;
   }
-
-  public String getImage() {
-    return image;
-  }
-
   public int getList_id() {
     return list_id;
   }
@@ -85,10 +67,6 @@ public class Wish {
 
   public void setDescription(String description) {
     this.description = description;
-  }
-
-  public void setImage(String image) {
-    this.image = image;
   }
 
   public void setList_id(int list_id) {
