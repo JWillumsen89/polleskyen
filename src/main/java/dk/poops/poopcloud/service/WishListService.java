@@ -22,4 +22,8 @@ public class WishListService {
 
   }
 
+    public WishList findWishListById(int id){
+     return wishListJPARepo.getById(id);
+  }
+
 }

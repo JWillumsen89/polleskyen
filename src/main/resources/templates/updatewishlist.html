@@ -8,6 +8,7 @@
 <h1>Hello</h1>
 
 <p th:text="${id}"></p>
+<p th:text="${wishlist.name}"></p>
 
 
 <div>
@@ -17,10 +18,11 @@
 
     <form action="/updatewishlist" method="post">
         <div class="form-group">
-            <input type="text" name="name" th:value="${name}" class="form-control">
+            <input type="hidden" name="id" th:value="${wishlist.id}">
+            <input type="text" name="name" th:value="${wishlist.name}" class="form-control">
         </div>
 
-        <button type="Opdater" class="btn btn-primary" th:placeholder="${name}">Submit</button>
+        <button type="Opdater" class="btn btn-primary">Submit</button>
     </form>
 
 </div>
