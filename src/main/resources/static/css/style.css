@@ -76,3 +76,17 @@ h1{
 {
     color: whitesmoke;
 }
+
+.navbar-button {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: white;
+    box-shadow: none;
+    background-color: white;
+    color: black;
+    height: 80px;
+    width: 100px;
+
+}

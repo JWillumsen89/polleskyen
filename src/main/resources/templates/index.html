@@ -7,9 +7,8 @@
     <link rel="stylesheet" type="text/css" th:href="@{../css/style.css}" href="../static/css/style.css">
 </head>
 <body>
-<div th:insert="fragments/header.html"></div>
-
-<a href="createwishlist">Opret en PølleListe</a>
+<div th:insert="fragments/header.html">
+</div>
 
 <p th:each="wishlist :${wishlists}">
     <span th:text="${wishlist.id}"></span>

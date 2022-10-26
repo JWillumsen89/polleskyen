@@ -25,4 +25,8 @@ public class WishService {
         return wishJPARepo.findWishByList_id(id);
     }
 
+    public void deleteWish(int id) {
+        wishJPARepo.deleteById(id);
+    }
+
 }
