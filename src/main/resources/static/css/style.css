@@ -133,9 +133,9 @@ a {
 
 /*HEADER WISHES*/
 .grid-container_wish {
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
     display: grid;
-    padding: 10px;
+    padding: 50px;
 }
 
 .grid-item_wish {
@@ -145,7 +145,6 @@ a {
 }
 
 .grid-container_wish > div {
-    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0;
     font-size: 24px;
