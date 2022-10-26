@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pølleskyen</title>
   <style>
-
-
-    .wishBox {
-      font-family: "Montserrat", serif;
-      display: flex;
+    body{
+      background:transparent;
     }
 
     * {
@@ -20,7 +17,7 @@
 
     .navbar {
       background: white;
-      height: 100px;
+      height: 110px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -78,84 +75,46 @@
 
 
     h1 {
-      font-family: "Franklin Gothic Book", sans-serif;
-      text-shadow: 2px 2px black;
+      font-family: "Comfortaa";
+      /*text-shadow: 1px 1px 2px black;*/
       text-align: left;
       font-size: 60px;
-      color: skyblue;
+      color: #B1D3F1;
     }
 
     h2 {
-      font-family: "Franklin Gothic Book", sans-serif;
-      text-shadow: 2px 2px black;
+      font-family: "Comfortaa";
+      /*text-shadow: 1px 1px 2px black;*/
       text-align: center;
       font-size: 60px;
-      color: skyblue;
+      color: #B1D3F1;
     }
 
     h3 {
-      font-family: "Franklin Gothic Book", sans-serif;
-      text-shadow: 2px 2px black;
+      font-family: "Comfortaa";
+      /*text-shadow: 1px 1px 2px black;*/
       text-align: center;
       font-size: 40px;
-      color: skyblue;
+      color: #B1D3F1;
     }
 
-
-
-
-    /*HEADER WISHLIST*/
-
-    .grid-container {
-      display: grid;
-      padding: 10px;
-      justify-content: center;
+    div{
+      font-family: "Comfortaa";
     }
 
-    .grid-item {
-      padding: 10px;
-      font-size: 24px;
-      color: black;
-
+    div2{
+      font-family: "Comfortaa";
+      font-size: small;
     }
+
     a {
       text-decoration: none !important;
     }
 
-    .item1 {
-      grid-column: 1 / span 2;
-      grid-row: 1;
-    }
-
-    .item2 {
-      grid-column: 3;
-      grid-row: 1 / span 2;
-    }
-
-    .grid-view {
-      grid-template-columns: auto auto auto auto;
-      overflow: hidden;
-      grid-gap: 20px;
-    }
-
-    /*HEADER WISHES*/
-    .grid-container_wish {
-      grid-template-columns: auto auto auto auto;
-      display: grid;
-      padding: 10px;
-    }
-
-    .grid-item_wish {
-      padding: 10px;
-      font-size: 24px;
-      color: black;
-    }
-
     .grid-container_wish > div {
-      background-color: rgba(255, 255, 255, 0.8);
       text-align: center;
       padding: 20px 0;
-      font-size: 30px;
+      font-size: 24px;
     }
 
 
@@ -171,9 +130,49 @@
       background-image: url("https://i.imgur.com/fQ9msNB.png");
       background-position: center;
       background-size: cover;
-      height: 596px;
-      max-width: 2000px;
+      min-width: 2000px;
+      min-height: 596px;
+      font-family: "Comfortaa";
     }
+
+    .footerbox1{
+      margin-top: -100px;
+      margin-left: 100px;
+      margin-bottom: 200px;
+    }
+
+    .footertittle{
+      font-size: x-large;
+
+    }
+
+    .footertxt{
+      font-size: medium;
+      color: #B1D3F1;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center
+    }
+
+    .flex-container > div {
+      background-color: #B1D3F1;
+      width: 200px;
+      margin: 30px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+
+    div.card {
+      width: 600px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      color: white;
+    }
+
 </style>
   </head>
 <body>
@@ -204,26 +203,40 @@
   </div>
 </div>
 
-<div class="grid-container">
+<div class="flex-container">
 <h3>Lav en ny Pølle</h3>
 </div>
+<div class="flex-container">
+<div class="card">
 <form action="/showwishlist/createwish" method="post">
   <label>Navn:
     <input type="text" name="name" placeholder="Giv din Pølle et navn" required>
-  </label>
+  </label><br>
   <label>Pris:
     <input type="number" step="0.01" name="price" placeholder="Giv din Pølle en pris">
-  </label>
+  </label><br>
   <label>Link:
     <input type="url" name="link" placeholder="Giv link til din Pølle">
-  </label>
+  </label><br>
   <label>Beskrivelse:
     <input type="text" name="description" placeholder="Beskriv din Pølle">
-  </label>
+  </label><br>
   <input type="hidden" name="list_id" th:value="${wishlist.id}">
   <input type="hidden" name="reserved" value="false">
   <input type="submit" value="Opret din PølleListe">
 </form>
-<footer></footer>
+</div>
+</div>
+<footer>
+</footer>
+<div class="footerbox1">
+  <div class="footertittle">Team Pøllerne:</div><br><br>
+  <div class="footertxt">
+    <p>Ramiladen</p><br>
+    <p>Frederik</p><br>
+    <p>Jonathan</p><br>
+    <p>Thomas</p>
+  </div>
+</div>
 </body>
 </html>

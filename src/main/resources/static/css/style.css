@@ -1,6 +1,9 @@
+body{
+    background:transparent;
+}
 
 .wishBox {
-    font-family: "Montserrat", serif;
+    font-family: "Comfortaa", serif;
     display: flex;
 }
 
@@ -12,7 +15,7 @@
 
 .navbar {
     background: white;
-    height: 100px;
+    height: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,29 +73,41 @@
 
 
 h1 {
-    font-family: "Franklin Gothic Book", sans-serif;
-    text-shadow: 2px 2px black;
+    font-family: "Comfortaa";
+    /*text-shadow: 1px 1px 2px black;*/
     text-align: left;
     font-size: 60px;
-    color: skyblue;
+    color: #B1D3F1;
 }
 
 h2 {
-    font-family: "Franklin Gothic Book", sans-serif;
-    text-shadow: 2px 2px black;
+    font-family: "Comfortaa";
+    /*text-shadow: 1px 1px 2px black;*/
     text-align: center;
     font-size: 60px;
-    color: skyblue;
+    color: #B1D3F1;
 }
 
 h3 {
-    font-family: "Franklin Gothic Book", sans-serif;
-    text-shadow: 2px 2px black;
+    font-family: "Comfortaa";
+    /*text-shadow: 1px 1px 2px black;*/
     text-align: center;
     font-size: 40px;
-    color: skyblue;
+    color: #B1D3F1;
 }
 
+div{
+    font-family: "Comfortaa";
+}
+
+div2{
+    font-family: "Comfortaa";
+    font-size: small;
+}
+div3{
+    font-family: "Comfortaa";
+    font-size: large;
+}
 
 
 
@@ -131,6 +146,8 @@ a {
 }
 
 /*HEADER WISHES*/
+
+
 .grid-container_wish {
     grid-template-columns: auto auto auto auto auto;
     display: grid;
@@ -164,4 +181,67 @@ footer {
     background-size: cover;
     min-width: 2000px;
     min-height: 596px;
+    font-family: "Comfortaa";
+}
+
+.footerbox1{
+    margin-top: -100px;
+    margin-left: 100px;
+    margin-bottom: 200px;
+}
+
+.footertittle{
+    font-size: x-large;
+
+}
+
+.footertxt{
+    font-size: medium;
+    color: #B1D3F1;
+}
+
+
+
+/*THOMAS TEST*/
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 200px;
+    margin: 30px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+div.card {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+div.header {
+    background-color: #B1D3F1;
+    color: white;
+    padding: 80px;
+    font-size: 40px;
+    text-align: center;
+    min-height: 250px;
+}
+
+div.container {
+    padding: 10px;
+}
+
+.zoom {
+    transition: transform .2s;
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
 }

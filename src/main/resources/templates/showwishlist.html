@@ -13,23 +13,41 @@
 <!--<p th:text="${id}"></p>-->
 <div class="grid-container">
 <div class="grid-item item1"><h2 th:text="${wishlist.name}"></h2></div>
-    <div class="grid-item item3"><a th:href="@{'/updatewishlist/' +${wishlist.id}}"><input type="image" src="../images/update.png" style="width: 30px; height: 30px; margin-left: 50px"><br><span style="color: black">Opdater navn</span></a></div>
+    <div class="grid-item item3"><a th:href="@{'/updatewishlist/' +${wishlist.id}}"><input type="image" src="../images/update.png" style="width: 30px; height: 30px; margin-left: 80px"><br><span style="color: black">Opdater navn</span></a></div>
     <div class="grid-item item4"><a th:href="@{'createwish/' +${wishlist.id}}"><input type="image" src="../images/newList.png" style="width: 30px; height: 30px; margin-left: 50px"><br><span style="color: black">Tilføj ønske</span></a></div>
 
 </div>
 
-<div class="grid-container_wish">
+<!--<div class="grid-container_wish">
     <div class="grid-item_wish" th:each="wishes :${wish}">
     <span th:text="${wishes.id}" hidden></span>
     <div><span th:text="${wishes.name}"></span></div>
-   <div><span th:text="${wishes.price}"></span> DKK</div>
-<!--    <a th:href="${wishes.link}" target="_blank"><span th:text="${wishes.link}"></span> </a>
+   <div2><span th:text="${wishes.price}"></span> DKK</div2>
+   <a th:href="${wishes.link}" target="_blank"><span th:text="${wishes.link}"></span> </a>
     <span th:text="${wishes.description}"></span>
-    <span th:text="${wishes.reserved}"></span>-->
+    <span th:text="${wishes.reserved}"></span>
     <div><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image" src="../images/delete.png" style="width: 15px; height: 15px"></a>
     </div>
     </div>
+    </div>-->
+
+<!--Thomas test-->
+    <div class="flex-container">
+        <div class="card zoom" th:each="wishes :${wish}">
+            <span th:text="${wishes.id}" hidden></span>
+            <div class="header"><span th:text="${wishes.name}"></span></div>
+            <div2 class="container"><span th:text="${wishes.price}"></span> DKK</div2><br>
+            <div><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image" src="../images/delete.png" style="width: 15px; height: 15px"></a>
+            </div>
+        </div>
     </div>
-<footer></footer>
+
+<script>
+    if(wish.reserved = true){
+
+    }
+</script>
+
+<div th:insert="fragments/footer.html"></div>
 </body>
 </html>
