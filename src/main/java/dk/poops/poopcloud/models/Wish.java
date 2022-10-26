@@ -10,7 +10,7 @@ public class Wish {
   @Id
   private int id;
   private String name;
-  private double price;
+  private String price;
   private String link;
   private String description;
   private int list_id;
@@ -18,7 +18,7 @@ public class Wish {
   public Wish(){
   }
 
-  public Wish(int id, String name, double price, String link, String description, int list_id) {
+  public Wish(int id, String name, String price, String link, String description, int list_id) {
     this.id = id;
     this.name = name;
     this.price = price;
@@ -35,7 +35,7 @@ public class Wish {
     return name;
   }
 
-  public double getPrice() {
+  public String getPrice() {
     return price;
   }
 
@@ -58,7 +58,7 @@ public class Wish {
     this.name = name;
   }
 
-  public void setPrice(double price) {
+  public void setPrice(String price) {
     this.price = price;
   }
 
