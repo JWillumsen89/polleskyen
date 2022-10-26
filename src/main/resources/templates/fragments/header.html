@@ -1,30 +1,30 @@
 <div class="navbar">
-  <div class="navbar_container">
-    <div class="navbar_logo">
-      <a href="/">
-        <img th:src="@{https://i.imgur.com/uO3C3wu.png}" src="https://i.imgur.com/uO3C3wu.png" style="height: 80px; width: 100px">
-      </a>
-
-      <!-- Knap: opret pølleliste -->
-      <div class="navbar-button">
-        <a href="/createwishlist">
-
-      <button> <img src="../images/newList.png" style="height: 40px; width: 65px; align-content: center">Opret en PølleListe</button>
-        </a>
-      </div>
-      <!-- Knap: Login pølleliste -->
-      <div class="navbar-button">
-
-        <!-- indsæt login her -->
-        <a href="/">
-
-          <button><img src="../images/login.png" style="height: 40px; width: 65px; align-content: center">Login her</button>
-        </a>
-      </div>
+    <div class="navbar_container">
+        <div class="navbar_logo">
+            <a href="/">
+                <img th:src="@{https://i.imgur.com/uO3C3wu.png}" src="https://i.imgur.com/uO3C3wu.png"
+                     style="height: 90px; width: 110px">
+            </a>
+        </div>
+        <div class="center_navbar">
+            <h1>PølleSkyen</h1>
+        </div>
+            <div class="navbar-create">
+                <!-- Knap: opret pølleliste -->
+                <a href="/createwishlist " style="text-decoration: none; color: black">
+                    <span>Opret en PølleListe</span>
+                </a>
+                <!-- Knap: Login pølleliste -->
+                <div class="navbar-login" style="text-decoration: none">
+                    <!-- indsæt login her -->
+                    <a href="/" style="text-decoration: none; color: black">
+                        <span>Login</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-
-  </div>
-
+</div>
 
 
 </div>
