@@ -61,7 +61,7 @@ h1 {
     padding: 0 10px;
 
 }
-
+@media only screen and (min-width: 1000px) {
 .navbar-create {
     padding: 20px 30px;
     display: flex;
@@ -69,18 +69,41 @@ h1 {
     text-align: center;
     box-shadow: none;
     color: black;
-    font-size: 2vw;
-
+    font-size: 26px;
 }
-
+}
+    @media only screen and (min-width: 1000px) {
 .navbar-login {
     padding-left: 50px;
     display: flex;
     justify-content: end;
     text-align: center;
     box-shadow: none;
-    font-size: 2vw;
+    font-size: 26px;
 }
+    }
+@media only screen and (max-width: 1000px) {
+    .navbar-create {
+        padding: 20px 30px;
+        display: flex;
+        justify-content: end;
+        text-align: center;
+        box-shadow: none;
+        color: black;
+        font-size: 18px;
+    }
+}
+    @media only screen and (max-width: 1000px) {
+        .navbar-login {
+            padding-left: 50px;
+            display: flex;
+            justify-content: end;
+            text-align: center;
+            box-shadow: none;
+            font-size: 18px;
+        }
+    }
+
 
 /*HEADER*/
 
