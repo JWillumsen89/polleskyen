@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{../css/style.css}" href="../static/css/style.css">
 </head>
 <body>
+
 <div th:insert="fragments/header.html"></div>
 <p th:text="${id}"></p>
 <p th:text="${wishlist.name}"></p>
@@ -21,7 +22,7 @@
     <span th:text="${wishes.id}"></span>
     <span th:text="${wishes.name}"></span>
     <span th:text="${wishes.price}"></span>DKK
-    <span th:text="${wishes.link}"></span>
+    <a th:href="${wishes.link}"><span th:text="${wishes.link}"></span> </a>
     <span th:text="${wishes.description}"></span>
 
 <footer></footer>
