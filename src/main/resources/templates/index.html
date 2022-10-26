@@ -9,7 +9,7 @@
 <body>
 <div th:insert="fragments/header.html">
 </div>
-<footer>
+
 <p th:each="wishlist :${wishlists}">
     <span th:text="${wishlist.id}"></span>
     <span th:text="${wishlist.name}"></span>
@@ -20,7 +20,7 @@
     <!-- <a th:href="@{'/updatewishlist/' +${wishlist.id}}" target="myiframe"><input type="button" value="iFrame" onclick="toggle(this)"></a>
     <iframe id="myiframe" style="height:450px;width:100%;" hidden></iframe>-->
 </p>
-</footer>
+<footer></footer>
 </body>
 <!--
 <script>
