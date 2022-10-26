@@ -56,7 +56,7 @@ public class PoopController {
   }
 
   @GetMapping("/deletewishlist/{id}")
-  public String deleteWishList(@PathVariable("id")int id){
+  public String deleteWishList(@PathVariable("id")int id) {
     wishListService.deleteWishList(id);
     return "redirect:/";
   }
@@ -72,5 +72,4 @@ public class PoopController {
     wishService.saveWish(wish);
     return "redirect:/showwishlist/" + wish.getList_id();
   }
-
 }

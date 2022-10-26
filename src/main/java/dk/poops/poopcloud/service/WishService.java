@@ -5,7 +5,6 @@ import dk.poops.poopcloud.repository.WishJPARepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -16,10 +15,6 @@ public class WishService {
 
     public void saveWish(Wish wish){
         wishJPARepo.save(wish);
-    }
-
-    public void deleteWish(int id){
-        wishJPARepo.deleteById(id);
     }
 
     public List<Wish> fetchAllWishes(){
