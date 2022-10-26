@@ -47,24 +47,9 @@ footer {
     cursor: pointer;
 
 }
-
-/*HEADER*/
-
-.grid-container {
-    background-color: saddlebrown;
-    display: grid;
-    width: 100vw;
-    height: 100vh;
-
-}
-
-.grid-view {
-    grid-template-columns: auto auto auto auto;
-    overflow: hidden;
-    grid-gap: 20px;
-}
-
 h1 {
+    font-family: "Franklin Gothic Book", sans-serif;
+    text-shadow: 2px 2px black;
     text-align: center;
     font-size: 60px;
     color: skyblue;
@@ -73,12 +58,12 @@ h1 {
 .center_navbar {
     width: 50%;
     height: 100px;
-    padding: 3px 10px;
+    padding: 0 10px;
 
 }
 
 .navbar-create {
-    padding: 15px 30px;
+    padding: 20px 30px;
     display: flex;
     justify-content: end;
     text-align: center;
@@ -90,11 +75,26 @@ h1 {
 
 .navbar-login {
     padding-left: 50px;
-    /*margin-left: 150px;*/
     display: flex;
     justify-content: end;
     text-align: center;
     box-shadow: none;
     font-size: 2vw;
+}
 
+/*HEADER*/
+
+.grid-container {
+
+    background-color: saddlebrown;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.grid-view {
+    grid-template-columns: auto auto auto auto;
+    overflow: hidden;
+    grid-gap: 20px;
 }

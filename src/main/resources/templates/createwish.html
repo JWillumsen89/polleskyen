@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pølleskyen</title>
   <style>
-    /*NAVBAR*/
-    footer{
+
+    footer {
       background-image: url("https://i.imgur.com/fQ9msNB.png");
       background-position: center;
       background-size: cover;
       height: 596px;
+      max-width: 2000px;
+    }
+
+    .wishBox {
+      font-family: "Montserrat", serif;
+      display: flex;
     }
 
     * {
@@ -22,7 +28,7 @@
 
     .navbar {
       background: white;
-      height: 80px;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -33,22 +39,54 @@
 
     .navbar_container {
       background: white;
-      box-shadow: 0px 3px 5px rgb(0,0,0,20%);
+      box-shadow: 0px 3px 5px rgb(0, 0, 0, 20%);
       display: flex;
       justify-content: space-between;
       height: 80px;
       z-index: 1;
       width: 100%;
-      margin: 0 auto;
-      padding: 0 50px;
+
     }
 
-    .navbar_logo{
-      margin-left: -30px;
+    .navbar_logo {
       display: flex;
       align-items: center;
       cursor: pointer;
 
+    }
+    h1 {
+      font-family: "Franklin Gothic Book", sans-serif;
+      text-shadow: 2px 2px black;
+      text-align: center;
+      font-size: 60px;
+      color: skyblue;
+    }
+
+    .center_navbar {
+      width: 50%;
+      height: 100px;
+      padding: 3px 10px;
+
+    }
+
+    .navbar-create {
+      padding: 15px 30px;
+      display: flex;
+      justify-content: end;
+      text-align: center;
+      box-shadow: none;
+      color: black;
+      font-size: 2vw;
+
+    }
+
+    .navbar-login {
+      padding-left: 50px;
+      display: flex;
+      justify-content: end;
+      text-align: center;
+      box-shadow: none;
+      font-size: 2vw;
     }
 </style>
   </head>
@@ -57,14 +95,31 @@
   <div class="navbar_container">
     <div class="navbar_logo">
       <a href="/">
-        <img th:src="@{https://i.imgur.com/3nzMX1b.png}" src="https://i.imgur.com/3nzMX1b.png" style="height: 80px; width: 100px">
+        <img th:src="@{https://i.imgur.com/uO3C3wu.png}" src="https://i.imgur.com/uO3C3wu.png"
+             style="height: 90px; width: 110px">
       </a>
+    </div>
+    <div class="center_navbar">
+      <h1>PølleSkyen</h1>
+    </div>
+    <div class="navbar-create">
+      <!-- Knap: opret pølleliste -->
+      <a href="/createwishlist " style="text-decoration: none; color: black">
+        <span>Opret ny ønskeliste</span>
+      </a>
+      <!-- Knap: Login pølleliste -->
+      <div class="navbar-login" style="text-decoration: none">
+        <!-- indsæt login her -->
+        <a href="/" style="text-decoration: none; color: black">
+          <span>Login</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
 
-<h1>Lav en ny Pølle</h1>
+<h2>Lav en ny Pølle</h2>
 
 <form action="/showwishlist/createwish" method="post">
   <label>Navn:
