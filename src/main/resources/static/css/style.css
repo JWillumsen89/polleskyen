@@ -163,5 +163,5 @@ footer {
     background-position: center;
     background-size: cover;
     min-width: 2000px;
-    height: 596px;
+    min-height: 596px;
 }
