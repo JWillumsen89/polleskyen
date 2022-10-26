@@ -12,9 +12,14 @@
 <p th:text="${wishlist.name}"></p>
 
 
+
 <a th:href="@{'/updatewishlist/' +${wishlist.id}}"><input type="submit" value="Update WishList name" ></a>
 <a th:href="@{'createwish/' +${wishlist.id}}"><input type="submit" value="Create Wish" ></a>
 
+
+<p th:each="wishes :${wish}">
+    <span th:text="${wishes.id}"></span>
+    <span th:text="${wishes.name}"></span>
 
 <footer></footer>
 </body>

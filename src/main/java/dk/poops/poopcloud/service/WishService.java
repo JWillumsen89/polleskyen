@@ -5,6 +5,7 @@ import dk.poops.poopcloud.repository.WishJPARepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -24,4 +25,9 @@ public class WishService {
     public List<Wish> fetchAllWishes(){
         return wishJPARepo.findAll();
     }
+
+    public List<Wish> fetchByID(int id){
+        return wishJPARepo.findWishByList_id(id);
+    }
+
 }

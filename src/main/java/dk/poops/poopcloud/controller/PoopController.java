@@ -27,7 +27,7 @@ public class PoopController {
   public String showWishList(@PathVariable("id")int id, Model model) {
     model.addAttribute("id",id);
     model.addAttribute("wishlist",wishListService.findWishListById(id));
-
+    model.addAttribute("wish",wishService.fetchByID(id));
     return "showwishlist";
   }
 
@@ -52,7 +52,6 @@ public class PoopController {
   @PostMapping("/updatewishlist")
   public String saveWishlist(@ModelAttribute WishList wishList){
     wishListService.saveWishList(wishList);
-
     return "redirect:/showwishlist/" + wishList.getId();
   }
 
@@ -61,7 +60,6 @@ public class PoopController {
     wishListService.deleteWishList(id);
     return "redirect:/";
   }
-
 
   @GetMapping("/showwishlist/createwish/{id}")
   public String showWishCreateForm(@PathVariable("id")int id, Model model){
