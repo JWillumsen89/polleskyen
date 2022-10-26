@@ -2,6 +2,9 @@ package dk.poops.poopcloud.models;
 
 import javax.persistence.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
 
 @Entity
 @Table(name = "wishes")
@@ -15,16 +18,19 @@ public class Wish {
   private String description;
   private int list_id;
 
+  private boolean reserved;
+
   public Wish(){
   }
 
-  public Wish(int id, String name, String price, String link, String description, int list_id) {
+  public Wish(int id, String name, String price, String link, String description, boolean reserved, int list_id) {
     this.id = id;
     this.name = name;
     this.price = price;
     this.link = link;
     this.description = description;
     this.list_id = list_id;
+    this.reserved = reserved;
   }
 
   public int getId() {
@@ -50,6 +56,8 @@ public class Wish {
     return list_id;
   }
 
+  public boolean isReserved() { return reserved; }
+
   public void setId(int id) {
     this.id = id;
   }
@@ -73,6 +81,8 @@ public class Wish {
   public void setList_id(int list_id) {
     this.list_id = list_id;
   }
+
+  public void setReserved(boolean reserved) { this.reserved = reserved; }
 
   public String toString(){
     return id + " | " + name + " | " + price + "dkk | " + link + " | " + description + " | " + list_id;

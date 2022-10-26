@@ -1,10 +1,15 @@
-/*NAVBAR*/
+
 footer{
     background-image: url("https://i.imgur.com/fQ9msNB.png");
     background-position: center;
     background-size: cover;
     height: 596px;
     max-width: 2000px;
+}
+
+.wishBox{
+    font-family: "Montserrat", serif;
+    display: flex;
 }
 
 * {
