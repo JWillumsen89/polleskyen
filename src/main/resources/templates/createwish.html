@@ -6,13 +6,6 @@
   <title>Pølleskyen</title>
   <style>
 
-    footer {
-      background-image: url("https://i.imgur.com/fQ9msNB.png");
-      background-position: center;
-      background-size: cover;
-      height: 596px;
-      max-width: 2000px;
-    }
 
     .wishBox {
       font-family: "Montserrat", serif;
@@ -23,7 +16,6 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
     }
 
     .navbar {
@@ -38,10 +30,9 @@
     }
 
     .navbar_container {
-      background: white;
       box-shadow: 0px 3px 5px rgb(0, 0, 0, 20%);
       display: flex;
-      justify-content: space-between;
+      justify-content: left;
       height: 80px;
       z-index: 1;
       width: 100%;
@@ -52,9 +43,49 @@
       display: flex;
       align-items: center;
       cursor: pointer;
-
     }
+
+    .center_navbar {
+      width: 70%;
+      height: 100px;
+      /*padding: 0 10px;*/
+      /*background-color: black;*/
+    }
+    @media only screen and (min-width: 1000px) {
+      .navbar-create {
+        padding: 20px 30px;
+        display: flex;
+        justify-content: end;
+        text-align: center;
+        box-shadow: none;
+        color: black;
+        font-size: 26px;
+      }
+    }
+
+    @media only screen and (max-width: 1000px) {
+      .navbar-create {
+        padding: 20px 30px;
+        flex-direction: column;
+        display: flex;
+        justify-content: end;
+        text-align: center;
+        box-shadow: none;
+        color: black;
+        font-size: 18px;
+      }
+    }
+
+
     h1 {
+      font-family: "Franklin Gothic Book", sans-serif;
+      text-shadow: 2px 2px black;
+      text-align: left;
+      font-size: 60px;
+      color: skyblue;
+    }
+
+    h2 {
       font-family: "Franklin Gothic Book", sans-serif;
       text-shadow: 2px 2px black;
       text-align: center;
@@ -62,31 +93,86 @@
       color: skyblue;
     }
 
-    .center_navbar {
-      width: 50%;
-      height: 100px;
-      padding: 3px 10px;
-
+    h3 {
+      font-family: "Franklin Gothic Book", sans-serif;
+      text-shadow: 2px 2px black;
+      text-align: center;
+      font-size: 40px;
+      color: skyblue;
     }
 
-    .navbar-create {
-      padding: 15px 30px;
-      display: flex;
-      justify-content: end;
-      text-align: center;
-      box-shadow: none;
+
+
+
+    /*HEADER WISHLIST*/
+
+    .grid-container {
+      display: grid;
+      padding: 10px;
+      justify-content: center;
+    }
+
+    .grid-item {
+      padding: 10px;
+      font-size: 24px;
       color: black;
-      font-size: 2vw;
 
     }
+    a {
+      text-decoration: none !important;
+    }
 
-    .navbar-login {
-      padding-left: 50px;
-      display: flex;
-      justify-content: end;
+    .item1 {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
+
+    .item2 {
+      grid-column: 3;
+      grid-row: 1 / span 2;
+    }
+
+    .grid-view {
+      grid-template-columns: auto auto auto auto;
+      overflow: hidden;
+      grid-gap: 20px;
+    }
+
+    /*HEADER WISHES*/
+    .grid-container_wish {
+      grid-template-columns: auto auto auto auto;
+      display: grid;
+      padding: 10px;
+    }
+
+    .grid-item_wish {
+      padding: 10px;
+      font-size: 24px;
+      color: black;
+    }
+
+    .grid-container_wish > div {
+      background-color: rgba(255, 255, 255, 0.8);
       text-align: center;
-      box-shadow: none;
-      font-size: 2vw;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+
+
+    a {
+      text-decoration: none !important;
+    }
+
+
+
+    /*FOOTER*/
+
+    footer {
+      background-image: url("https://i.imgur.com/fQ9msNB.png");
+      background-position: center;
+      background-size: cover;
+      height: 596px;
+      max-width: 2000px;
     }
 </style>
   </head>
@@ -105,22 +191,22 @@
     <div class="navbar-create">
       <!-- Knap: opret pølleliste -->
       <a href="/createwishlist " style="text-decoration: none; color: black">
-        <span>Opret ny ønskeliste</span>
+        <span>Opret ny Ønskeliste</span>
       </a>
-      <!-- Knap: Login pølleliste -->
-      <div class="navbar-login" style="text-decoration: none">
-        <!-- indsæt login her -->
-        <a href="/" style="text-decoration: none; color: black">
-          <span>Login</span>
-        </a>
-      </div>
+    </div>
+    <!-- Knap: Login pølleliste -->
+    <div class="navbar-create" style="text-decoration: none">
+      <!-- indsæt login her -->
+      <a href="/" style="text-decoration: none; color: black">
+        <span>Login</span>
+      </a>
     </div>
   </div>
 </div>
 
-
-<h2>Lav en ny Pølle</h2>
-
+<div class="grid-container">
+<h3>Lav en ny Pølle</h3>
+</div>
 <form action="/showwishlist/createwish" method="post">
   <label>Navn:
     <input type="text" name="name" placeholder="Giv din Pølle et navn" required>

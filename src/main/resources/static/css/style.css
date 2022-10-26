@@ -1,11 +1,4 @@
 
-footer {
-    background-image: url("https://i.imgur.com/fQ9msNB.png");
-    background-position: center;
-    background-size: cover;
-    height: 596px;
-    max-width: 2000px;
-}
 
 .wishBox {
     font-family: "Montserrat", serif;
@@ -16,7 +9,6 @@ footer {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 .navbar {
@@ -31,10 +23,9 @@ footer {
 }
 
 .navbar_container {
-    background: white;
     box-shadow: 0px 3px 5px rgb(0, 0, 0, 20%);
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     height: 80px;
     z-index: 1;
     width: 100%;
@@ -45,46 +36,30 @@ footer {
     display: flex;
     align-items: center;
     cursor: pointer;
-
-}
-h1 {
-    font-family: "Franklin Gothic Book", sans-serif;
-    text-shadow: 2px 2px black;
-    text-align: center;
-    font-size: 60px;
-    color: skyblue;
 }
 
 .center_navbar {
-    width: 50%;
+    width: 70%;
     height: 100px;
-    padding: 0 10px;
-
+    /*padding: 0 10px;*/
+/*background-color: black;*/
 }
 @media only screen and (min-width: 1000px) {
-.navbar-create {
-    padding: 20px 30px;
-    display: flex;
-    justify-content: end;
-    text-align: center;
-    box-shadow: none;
-    color: black;
-    font-size: 26px;
-}
-}
-    @media only screen and (min-width: 1000px) {
-.navbar-login {
-    padding-left: 50px;
-    display: flex;
-    justify-content: end;
-    text-align: center;
-    box-shadow: none;
-    font-size: 26px;
-}
+    .navbar-create {
+        padding: 20px 30px;
+        display: flex;
+        justify-content: end;
+        text-align: center;
+        box-shadow: none;
+        color: black;
+        font-size: 26px;
     }
+}
+
 @media only screen and (max-width: 1000px) {
     .navbar-create {
         padding: 20px 30px;
+        flex-direction: column;
         display: flex;
         justify-content: end;
         text-align: center;
@@ -93,31 +68,102 @@ h1 {
         font-size: 18px;
     }
 }
-    @media only screen and (max-width: 1000px) {
-        .navbar-login {
-            padding-left: 50px;
-            display: flex;
-            justify-content: end;
-            text-align: center;
-            box-shadow: none;
-            font-size: 18px;
-        }
-    }
 
 
-/*HEADER*/
+h1 {
+    font-family: "Franklin Gothic Book", sans-serif;
+    text-shadow: 2px 2px black;
+    text-align: left;
+    font-size: 60px;
+    color: skyblue;
+}
+
+h2 {
+    font-family: "Franklin Gothic Book", sans-serif;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    font-size: 60px;
+    color: skyblue;
+}
+
+h3 {
+    font-family: "Franklin Gothic Book", sans-serif;
+    text-shadow: 2px 2px black;
+    text-align: center;
+    font-size: 40px;
+    color: skyblue;
+}
+
+
+
+
+/*HEADER WISHLIST*/
 
 .grid-container {
-
-    background-color: saddlebrown;
     display: grid;
-    width: 100vw;
-    height: 100vh;
+    padding: 10px;
+    justify-content: center;
+}
 
+.grid-item {
+    padding: 10px;
+    font-size: 24px;
+    color: black;
+
+}
+a {
+    text-decoration: none !important;
+}
+
+.item1 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.item2 {
+    grid-column: 3;
+    grid-row: 1 / span 2;
 }
 
 .grid-view {
     grid-template-columns: auto auto auto auto;
     overflow: hidden;
     grid-gap: 20px;
+}
+
+/*HEADER WISHES*/
+.grid-container_wish {
+    grid-template-columns: auto auto auto auto;
+    display: grid;
+    padding: 10px;
+}
+
+.grid-item_wish {
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.grid-container_wish > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+
+
+
+/*FOOTER*/
+
+footer {
+    background-image: url("https://i.imgur.com/fQ9msNB.png");
+    background-position: center;
+    background-size: cover;
+    height: 596px;
+    max-width: 2000px;
 }
