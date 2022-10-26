@@ -1,5 +1,4 @@
 
-
 .wishBox {
     font-family: "Montserrat", serif;
     display: flex;
@@ -42,7 +41,7 @@
     width: 70%;
     height: 100px;
     /*padding: 0 10px;*/
-/*background-color: black;*/
+    /*background-color: black;*/
 }
 @media only screen and (min-width: 1000px) {
     .navbar-create {
@@ -163,6 +162,6 @@ footer {
     background-image: url("https://i.imgur.com/fQ9msNB.png");
     background-position: center;
     background-size: cover;
+    min-width: 2000px;
     height: 596px;
-    max-width: 2000px;
 }
