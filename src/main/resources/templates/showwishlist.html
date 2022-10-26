@@ -24,7 +24,7 @@
     <a th:href="${wishes.link}" target="_blank"><span th:text="${wishes.link}"></span> </a>
     <span th:text="${wishes.description}"></span>
     <span th:text="${wishes.reserved}"></span>
-    <a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="submit" value="Delete Wish"></a>
+    <a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image" src="../images/delete.png" style="width: 15px; height: 15px"></a>
 
 <footer></footer>
 </body>
