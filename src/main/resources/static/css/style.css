@@ -34,6 +34,13 @@ body{
 
 }
 
+@media only screen and (max-width: 600px) {
+    h2,h1,h3,div,div2,div3
+{
+    font-size: 20px;
+}
+}
+
 .navbar_logo {
     display: flex;
     align-items: center;
@@ -133,7 +140,7 @@ div{
 
 div2{
     font-family: PølleSkyen;
-    font-size: 26px;
+    font-size: 24px;
 }
 div3{
     font-family: PølleSkyen;
@@ -275,7 +282,7 @@ div.card1 {
 }
 
 div.card {
-    width: 250px;
+    width: 400px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
 }
