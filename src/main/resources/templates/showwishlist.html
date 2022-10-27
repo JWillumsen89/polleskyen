@@ -43,12 +43,13 @@
         </div>
         <div th:id="'popup1' + ${wishes.id}" class="overlay" style="position: absolute; z-index: 1">
             <div class="popup">
-                <h2 th:text="${wishes.name}">Name</h2>
                 <a class="close" href="#">&times;</a>
-
+                <h2 th:text="${wishes.name}">Name</h2>
                 <div class="content" th:text="${wishes.description}">
                     Description
                 </div>
+                <a th:href="${wishes.link}" target="_blank">Link til produkt</a>
+
             </div>
         </div>
     </div>
