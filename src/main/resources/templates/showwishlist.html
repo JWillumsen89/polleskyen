@@ -44,16 +44,17 @@
         <div th:id="'popup1' + ${wishes.id}" class="overlay" style="position: absolute; z-index: 1">
             <div class="popup">
                 <a class="close" href="#">&times;</a>
-                <h2 th:text="${wishes.name}">Name</h2>
+                <h5 th:text="${wishes.name}">Name</h5>
+                <br>
                 <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
                 <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
                 <br>
                 <br>
-                <div class="content" th:text="${wishes.description}">
+                <div class="content" th:text="${wishes.description}" style="font-size: 24px">
                     Description
                 </div>
                 <br>
-                <a th:href="${wishes.link}" target="_blank">Link til produkt</a>
+                <a th:href="${wishes.link}" target="_blank" style="color: black">Link til produkt</a>
 
             </div>
         </div>
