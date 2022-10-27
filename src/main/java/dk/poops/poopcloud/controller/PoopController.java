@@ -1,5 +1,6 @@
 package dk.poops.poopcloud.controller;
 
+import dk.poops.poopcloud.mail.MailSender;
 import dk.poops.poopcloud.models.Wish;
 import dk.poops.poopcloud.models.WishList;
 import dk.poops.poopcloud.service.WishListService;
@@ -9,11 +10,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.NumberFormat;
-import java.util.Locale;
+import javax.mail.MessagingException;
 
 @Controller
 public class PoopController {
+
+  @Autowired
+  MailSender mailSender;
 
   @Autowired
   WishListService wishListService;
@@ -81,6 +84,24 @@ public class PoopController {
   public String deleteWish(@PathVariable("wishid") int wishid, @PathVariable("id")int id) {
     wishService.deleteWish(wishid);
     return "redirect:/showwishlist/" +  id;
+  }
+
+  @GetMapping("/showwishlist/sharewishlist/{id}")
+  public String shareMailSite(@PathVariable("id")int wishListId, Model model) {
+   model.addAttribute("wishlist", wishListService.findWishListById(wishListId));
+    return "sharewishlist";
+  }
+
+  @GetMapping("/mail")
+  public String mail(@RequestParam("mail") String mail, @RequestParam("wishList") String wishList, @RequestParam("link") String link) throws MessagingException {
+
+    mailSender.send(mail, "You have been sent a wish list - " + wishList,
+        """
+            See all the wishes and reserve the one you are buying.
+            
+            Click this link:""" + " " + link);
+
+    return "mailsent";
   }
 
 }

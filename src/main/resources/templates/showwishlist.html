@@ -22,6 +22,11 @@
                                                                                       style="width: 30px; height: 30px"><br><span
             style="color: black">Tilføj ønske</span></a></div>
 </div>
+<div class="grid-item item4"><a th:href="@{'sharewishlist/' +${wishlist.id}}"><input type="image"
+                                                                                  src="../images/mail.png"
+                                                                                  style="width: 30px; height: 30px"><br><span
+        style="color: black">Del Ønskeseddel</span></a></div>
+</div>
 
 <div class="flex-container">
     <div class="card" th:each="wishes :${wish}">
