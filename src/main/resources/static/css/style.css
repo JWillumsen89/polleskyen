@@ -91,14 +91,26 @@ body{
 }
 
 
-h1 {
-    font-family: PølleSkyen;
-    /*text-shadow: 1px 1px 2px black;*/
-    text-align: left;
-    font-size: 60px;
-    color: #7fbbef;
+@media only screen and (max-width: 1000px) {
+    h1 {
+        font-family: PølleSkyen;
+        /*text-shadow: 1px 1px 2px black;*/
+        text-align: left;
+        padding-top: 40px;
+        font-size: 24px;
+        color: #7fbbef;
+    }
 }
-
+@media only screen and (min-width: 1000px) {
+    h1 {
+        font-family: PølleSkyen;
+        padding-top: 15px;
+        /*text-shadow: 1px 1px 2px black;*/
+        text-align: left;
+        font-size: 60px;
+        color: #7fbbef;
+    }
+}
 h2 {
     font-family: PølleSkyen;
     /*text-shadow: 1px 1px 2px black;*/
