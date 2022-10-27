@@ -17,7 +17,6 @@ public class Wish {
   private String link;
   private String description;
   private int list_id;
-
   private boolean reserved;
 
   public Wish(){

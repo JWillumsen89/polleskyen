@@ -11,20 +11,6 @@
     text-align: center;
 }
 
-.button {
-    font-size: 1em;
-    padding: 10px;
-    color: #fff;
-    border: 2px solid #06D85F;
-    border-radius: 20px/50px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-}
-.button:hover {
-    background: #06D85F;
-}
-
 .overlay {
     position: fixed;
     top: 0;
@@ -47,7 +33,7 @@
     background: #fff;
     border-radius: 5px;
     width: 30%;
-    transition: all 5s ease-in-out;
+    transition: transform .2s;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -70,7 +56,7 @@
     color: #333;
 }
 .popup .close:hover {
-    color: #06D85F;
+    color: #B1D3F1;
 }
 .popup .content {
     max-height: 30%;
