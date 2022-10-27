@@ -41,14 +41,14 @@ body{
 }
 
 .center_navbar {
-    width: 60%;
+    width: 55%;
     height: 90px;
     /*padding: 0 10px;*/
     /*background-color: black;*/
 }
 @media only screen and (min-width: 1000px) {
     .navbar-create {
-        padding-right: 15px;
+        padding-right: 60px;
         padding-top: 40px;
         width: 100%;
         text-align: end;
