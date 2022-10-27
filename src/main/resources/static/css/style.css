@@ -265,11 +265,11 @@ div.header {
     word-wrap: break-word;
     overflow: hidden;
     max-height: 250px;
-    line-height: 1.8em;
+    /*line-height: 1.8em;*/
 }
 
 .small_header{
-
+    line-height: 1.6em;
 }
 
 div.container {

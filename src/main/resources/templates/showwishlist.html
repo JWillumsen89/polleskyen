@@ -41,8 +41,11 @@
 <div class="flex-container">
     <div class="card zoom" th:each="wishes :${wish}">
         <span th:text="${wishes.id}" hidden></span>
-        <div class="header"><span th:text="${wishes.name}"></span></div>
+        <div class="header">
+
+        </div>
         <div class="small_header">
+            <div style="line-height: 1.6em;"><span th:text="${wishes.name}"></span></div>
             <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
             <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
             <div><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image"
