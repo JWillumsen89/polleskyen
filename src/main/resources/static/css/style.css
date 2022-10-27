@@ -189,6 +189,11 @@ div3{
 }
 a {
     text-decoration: none !important;
+    color: black !important;
+}
+a:hover{
+    color: grey;
+    opacity: 0.6;
 }
 
 .item1 {
@@ -263,7 +268,7 @@ footer {
 }
 
 .footertxt{
-    font-size: medium;
+    font-size: large;
     color: #B1D3F1;
 }
 
@@ -311,6 +316,14 @@ div.card {
     text-align: center;
 }
 
+.header_text{
+    transform: rotate(35deg);
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px;
+    font-size: 55px;
+}
+
 div.header {
     background-color: #B1D3F1;
     color: white;
@@ -331,6 +344,13 @@ div.header {
 .small_header{
     line-height: 1.6em;
 }
+
+.show{
+    grid-template-columns: auto auto;
+    width: 50%;
+   float: left;
+}
+
 
 div.container {
     padding: 10px;

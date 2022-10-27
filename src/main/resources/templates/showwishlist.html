@@ -27,18 +27,19 @@
     <div class="card" th:each="wishes :${wish}">
         <span th:text="${wishes.id}" hidden></span>
         <div class="header">
-
+            <div class="header_text" style="font-size: 75px">Ønske</div>
         </div>
         <div class="small_header">
             <div style="line-height: 1.6em;"><span th:text="${wishes.name}"></span></div>
             <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
             <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
-            <div>
-                <a th:href="@{'#popup1' + ${wishes.id}}"><input type="image" src="../images/show.png"
-                                                                style="width: 25px; height: 25px"></a>
-                <a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image"
+            <br>
+            <div class="show">
+                <a th:href="@{'#popup1' + ${wishes.id}}">Vis  <!---<input type="image" src="../images/show.png"
+                                                                style="width: 28px; height: 28px;">----></a></div>
+               <div class="show"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}">Slet  <!---<input type="image"
                                                                                           src="../images/delete.png"
-                                                                                          style="width: 25px; height: 25px"></a>
+                                                                                                    style="width: 28px; height: 28px">----></a>
             </div>
         </div>
         <div th:id="'popup1' + ${wishes.id}" class="overlay" style="position: absolute; z-index: 1">
@@ -54,7 +55,9 @@
                     Description
                 </div>
                 <br>
-                <a th:href="${wishes.link}" target="_blank" style="color: black">Link til produkt  <img th:src="@{https://cdn-icons-png.flaticon.com/512/25/25284.png}" src="https://cdn-icons-png.flaticon.com/512/25/25284.png" style="height: 25px" width="25px"></a>
+                <a th:href="${wishes.link}" target="_blank" style="color: black">Link til produkt <img
+                        th:src="@{https://cdn-icons-png.flaticon.com/512/25/25284.png}"
+                        src="https://cdn-icons-png.flaticon.com/512/25/25284.png" style="height: 25px" width="25px"></a>
 
             </div>
         </div>
