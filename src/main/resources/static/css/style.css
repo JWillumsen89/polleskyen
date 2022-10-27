@@ -81,7 +81,7 @@ h1 {
 }
 
 h2 {
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", sans-serif;
     /*text-shadow: 1px 1px 2px black;*/
     text-align: center;
     font-size: 60px;
@@ -89,7 +89,7 @@ h2 {
 }
 
 h3 {
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", sans-serif;
     /*text-shadow: 1px 1px 2px black;*/
     text-align: center;
     font-size: 40px;
@@ -97,15 +97,16 @@ h3 {
 }
 
 div{
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", sans-serif;
 }
 
 div2{
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", sans-serif;
     font-size: small;
+
 }
 div3{
-    font-family: "Comfortaa";
+    font-family: "Comfortaa", sans-serif;
     font-size: large;
 }
 
@@ -210,7 +211,7 @@ footer {
 }
 
 .flex-container > div {
-    background-color: #f1f1f1;
+    /*background-color: #f1f1f1;*/
     width: 200px;
     margin: 30px;
     text-align: center;
@@ -249,10 +250,19 @@ div.card {
 div.header {
     background-color: #B1D3F1;
     color: white;
-    padding: 80px;
+    position: relative;
+    height: 250px;
+    /*padding-top:40%;*/
     font-size: 40px;
-    text-align: center;
-    min-height: 250px;
+    text-align:center;
+    /*max-height: 250px;*/
+    display: block;/* or inline-block */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 250px;
+    line-height: 1.8em;
+
 }
 
 div.container {

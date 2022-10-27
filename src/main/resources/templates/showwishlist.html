@@ -36,8 +36,10 @@
         <div class="card zoom" th:each="wishes :${wish}">
             <span th:text="${wishes.id}" hidden></span>
             <div class="header"><span th:text="${wishes.name}"></span></div>
-            <div2 class="container"><span th:text="${wishes.price}"></span> DKK</div2><br>
-            <div><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image" src="../images/delete.png" style="width: 15px; height: 15px"></a>
+            <div2><span th:if="${wishes.price.equals('')}"></span></div2>
+            <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
+<!--            <div2 class="container"><span th:text="${wishes.price}" th:if="${!wishes.price.equals('NULL')}">DKK</span></div2><br>-->
+            <div style="vertical-align: bottom"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image" src="../images/delete.png" style="width: 15px; height: 15px"></a>
             </div>
         </div>
     </div>
