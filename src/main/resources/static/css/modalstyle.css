@@ -1,6 +1,7 @@
 
 .box {
     width: 40%;
+    vertical-align: center;
     margin: 0 auto;
     background: rgba(255,255,255,0.2);
     padding: 35px;
@@ -46,8 +47,11 @@
     background: #fff;
     border-radius: 5px;
     width: 30%;
-    position: relative;
     transition: all 5s ease-in-out;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .popup h2 {
