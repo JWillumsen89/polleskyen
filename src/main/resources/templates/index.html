@@ -14,7 +14,7 @@
 <div class="card zoom" th:each="wishlist :${wishlists}" ><a th:href="@{'/showwishlist/' +${wishlist.id}}" style="color: black">
     <div class="header"><span th:text="${wishlist.id}" hidden></span><br></div>
     <div class="small_header">
-    <div3 class="container"><span th:text="${wishlist.name}"></span></div3><br>
+    <div class="container"><span th:text="${wishlist.name}"></span></div>
     <a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="image" src="../images/delete.png" style="width: 30px; height: 30px"></a>
 </div>
 </a>
