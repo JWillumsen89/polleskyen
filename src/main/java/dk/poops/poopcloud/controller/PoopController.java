@@ -79,4 +79,5 @@ public class PoopController {
     wishService.deleteWish(wishid);
     return "redirect:/showwishlist/" +  id;
   }
+
 }
