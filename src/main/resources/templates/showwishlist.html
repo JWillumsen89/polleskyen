@@ -45,6 +45,9 @@
             <div class="popup">
                 <a class="close" href="#">&times;</a>
                 <h2 th:text="${wishes.name}">Name</h2>
+                <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
+                <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
+                <br>
                 <br>
                 <div class="content" th:text="${wishes.description}">
                     Description
