@@ -12,9 +12,15 @@
 
 <!--<p th:text="${id}"></p>-->
 <div class="grid-container">
-<div class="grid-item item1"><h2 th:text="${wishlist.name}"></h2></div>
-    <div class="grid-item item3"><a th:href="@{'/updatewishlist/' +${wishlist.id}}"><input type="image" src="../images/update.png" style="width: 30px; height: 30px; margin-left: 80px"><br><span style="color: black">Opdater navn</span></a></div>
-    <div class="grid-item item4"><a th:href="@{'createwish/' +${wishlist.id}}"><input type="image" src="../images/newList.png" style="width: 30px; height: 30px; margin-left: 50px"><br><span style="color: black">Tilføj ønske</span></a></div>
+    <div class="grid-item item1"><h2 th:text="${wishlist.name}"></h2></div>
+    <div class="grid-item item3"><a th:href="@{'/updatewishlist/' +${wishlist.id}}"><input type="image"
+                                                                                           src="../images/update.png"
+                                                                                           style="width: 30px; height: 30px; margin-left: 80px"><br><span
+            style="color: black">Opdater navn</span></a></div>
+    <div class="grid-item item4"><a th:href="@{'createwish/' +${wishlist.id}}"><input type="image"
+                                                                                      src="../images/newList.png"
+                                                                                      style="width: 30px; height: 30px; margin-left: 50px"><br><span
+            style="color: black">Tilføj ønske</span></a></div>
 
 </div>
 
@@ -32,20 +38,23 @@
     </div>-->
 
 <!--Thomas test-->
-    <div class="flex-container">
-        <div class="card zoom" th:each="wishes :${wish}">
-            <span th:text="${wishes.id}" hidden></span>
-            <div class="header"><span th:text="${wishes.name}"></span></div>
-            <div2><span th:if="${wishes.price.equals('')}"></span></div2>
+<div class="flex-container">
+    <div class="card zoom" th:each="wishes :${wish}">
+        <span th:text="${wishes.id}" hidden></span>
+        <div class="header"><span th:text="${wishes.name}"></span></div>
+        <div class="small_header">
+            <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
             <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
-<!--            <div2 class="container"><span th:text="${wishes.price}" th:if="${!wishes.price.equals('NULL')}">DKK</span></div2><br>-->
-            <div style="vertical-align: bottom"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image" src="../images/delete.png" style="width: 15px; height: 15px"></a>
+            <div><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}"><input type="image"
+                                                                                           src="../images/delete.png"
+                                                                                           style="width: 25px; height: 25px"></a>
             </div>
         </div>
     </div>
+</div>
 
 <script>
-    if(wish.reserved = true){
+    if (wish.reserved = true) {
 
     }
 </script>

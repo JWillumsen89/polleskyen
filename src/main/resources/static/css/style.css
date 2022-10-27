@@ -102,7 +102,7 @@ div{
 
 div2{
     font-family: PølleSkyen;
-    font-size: small;
+    font-size: 26px;
 }
 div3{
     font-family: PølleSkyen;
@@ -266,6 +266,9 @@ div.header {
     overflow: hidden;
     max-height: 250px;
     line-height: 1.8em;
+}
+
+.small_header{
 
 }
 
