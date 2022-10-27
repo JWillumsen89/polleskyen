@@ -15,7 +15,7 @@ body{
 
 .navbar {
     background: white;
-    height: 90px;
+    /*height: 90px;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,18 +34,32 @@ body{
 
 }
 
+
+
 @media only screen and (max-width: 600px) {
     h2,h1,h3,div,div2,div3
 {
     font-size: 20px;
 }
 }
-
-.navbar_logo {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+@media only screen and (min-width: 1000px) {
+    .navbar_logo {
+        display: flex;
+        cursor: pointer;
+        height: 80px;
+        width: 100px
+    }
 }
+    @media only screen and (max-width: 1000px) {
+        .navbar_logo {
+            /*display: flex;*/
+            padding: 5px;
+            margin-top: 12.5px;
+            cursor: pointer;
+            height: 50px;
+            width: 65px
+        }
+    }
 
 .center_navbar {
     width: 55%;
