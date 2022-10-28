@@ -30,8 +30,9 @@
     <div class="grid-item item4"><a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="image"
                                                                                            src="../images/delete.png"
                                                                                            style="width: 30px; height: 30px"><br><span
-            style="color: black">Slet ønskeliste</span></a></div></a>
-    </div>
+            style="color: black">Slet ønskeliste</span></a></div>
+    </a>
+</div>
 </div>
 
 <div class="flex-container">
@@ -48,20 +49,20 @@
                     src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png"
                     style="height: 150px; width: 150px; margin-top: -50px"></div>
         </div>
-        <div class="small_header">
+        <div class="small_header" style="line-height: 2em">
             <span th:if="${wishes.name.length()>16}">
             <div style="line-height: 1.6em;"><span th:text="${#strings.substring(wishes.name,0,16)} + .."></span></div></span>
             <span th:if="${wishes.name.length()<=16}">
-                <div style="line-height: 1.6em;"><span th:text="${wishes.name}"></span></div></span>
-            <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
-            <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
+                <div style="line-height: 1.6em;"><span th:text="${wishes.name}" ></span></div></span>
+            <div2><span th:if="${wishes.price.equals('')}" style="line-height: 2em"><br></span></div2>
+            <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'" style="line-height: 2em"></span></div2>
             <br>
-            <div class="show">
-                <a th:href="@{'#popup1' + ${wishes.id}}">Vis</a></div>
-            <div class="show"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}">Slet</a>
+            <div class="show" style="background-color: #b3d3f3">
+                <a  th:href="@{'#popup1' + ${wishes.id}}">Vis</a></div>
+            <div class="show" style="background-color: #f0dada"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}">Slet</a>
             </div>
 
-            <div><span th:if="${#bools.isFalse(wishes.reserved)}">
+            <div style="line-height: 2.5em"><br><span th:if="${#bools.isFalse(wishes.reserved)}">
                 <a th:href="@{'/reservewish/'+${wishes.id}}">
                     <img src="../images/Reserver.png"></a>
             </span>

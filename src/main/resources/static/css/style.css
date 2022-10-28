@@ -347,22 +347,19 @@ div.header {
     background-color: #B1D3F1;
     color: white;
     position: relative;
-    height: 250px;
-    /*padding-top:40%;*/
+    height: 230px;
+
     font-size: 40px;
     text-align:center;
-    /*max-height: 250px;*/
-    display: block;/* or inline-block */
+
+    display: block;
     text-overflow: ellipsis;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 250px;
-    /*line-height: 1.8em;*/
+    max-height: 230px;
+
 }
 
-.small_header{
-    line-height: 1.6em;
-}
 
 .show{
     grid-template-columns: auto auto;
