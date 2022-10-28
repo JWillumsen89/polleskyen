@@ -33,7 +33,12 @@
     <div class="card" th:each="wishes :${wish}">
         <span th:text="${wishes.id}" hidden></span>
         <div class="header">
-            <div class="header_text" style="font-size: 75px">Ønske</div>
+            <span th:if="${#bools.isTrue(wishes.reserved)}">
+                <div class="header_text" style="font-size: 55px">RESERVERET</div>
+            </span>
+            <span th:if="${#bools.isFalse(wishes.reserved)}">
+                <div class="header_text" style="font-size: 75px"></div>
+            </span>
         </div>
         <div class="small_header">
             <div style="line-height: 1.6em;"><span th:text="${wishes.name}"></span></div>
@@ -45,7 +50,16 @@
             <div class="show"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}">Slet</a>
             </div>
 
-            <div class="show"><a th:href="@{'/reservewish/'+${wishes.id}}">Reserver</a>
+            <div><span th:if="${#bools.isFalse(wishes.reserved)}">
+                <a th:href="@{'/reservewish/'+${wishes.id}}">
+                    <img src="../images/Reserver.png"></a>
+            </span>
+            </div>
+
+            <div><span th:if="${#bools.isTrue(wishes.reserved)}">
+                <a th:href="@{'/reservewish/'+${wishes.id}}">
+                <img src="../images/Reserveret.png"></a>
+            </span>
             </div>
 
 

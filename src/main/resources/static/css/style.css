@@ -334,7 +334,7 @@ div.card {
 }
 
 .header_text{
-    transform: rotate(35deg);
+    transform: rotate(30deg);
     text-align: center;
     justify-content: center;
     margin-top: 100px;
@@ -380,4 +380,22 @@ div.container {
 
 .zoom:hover {
     transform: scale(1.1);
+}
+
+.button1 {
+    grid-template-columns: auto auto;
+    background-color: white;
+    color: black;
+    border: 2px solid lightgrey;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1:hover{
+    background-color: #B1D3F1;
+    border: 2px solid  #B1D3F1;
 }

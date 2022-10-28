@@ -9,15 +9,12 @@
 <body>
 <div th:insert="fragments/header.html"></div>
 
-<p th:text="${id}"></p>
-<p th:text="${wishlist.name}"></p>
-
-
 <div>
-
+    <div class="flex-container">
     <h1>Opdater Pølleliste</h1>
-
-
+    </div>
+    <div class="flex-container1">
+        <div class="card1">
     <form action="/updatewishlist" method="post">
         <div class="form-group">
             <input type="hidden" name="id" th:value="${wishlist.id}">
@@ -26,7 +23,8 @@
 
         <button type="Opdater" class="btn btn-primary">Submit</button>
     </form>
-
+        </div>
+    </div>
 </div>
 <div th:insert="fragments/footer.html"></div>
 </body>
