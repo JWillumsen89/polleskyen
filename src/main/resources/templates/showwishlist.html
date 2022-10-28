@@ -40,12 +40,14 @@
             <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
             <br>
             <div class="show">
-                <a th:href="@{'#popup1' + ${wishes.id}}">Vis  <!---<input type="image" src="../images/show.png"
-                                                                style="width: 28px; height: 28px;">----></a></div>
-               <div class="show"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}">Slet  <!---<input type="image"
-                                                                                          src="../images/delete.png"
-                                                                                                    style="width: 28px; height: 28px">----></a>
+                <a th:href="@{'#popup1' + ${wishes.id}}">Vis</a></div>
+               <div class="show"><a th:href="@{'/deletewish/' +${wishes.list_id}+'/'+${wishes.id}}">Slet</a>
             </div>
+
+            <div class="show"><a th:href="@{'/reservewish/'+${wishes.id}}">Reserver</a>
+            </div>
+
+
         </div>
         <div th:id="'popup1' + ${wishes.id}" class="overlay" style="position: absolute; z-index: 1">
             <div class="popup">

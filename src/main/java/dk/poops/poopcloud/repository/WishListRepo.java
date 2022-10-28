@@ -1,20 +1,18 @@
 package dk.poops.poopcloud.repository;
 
+import dk.poops.poopcloud.models.Wish;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 @Repository
 public class WishListRepo {
 
   public void deleteWishList(int id) {
-    try{
+    try {
       Connection conn = DriverManager.getConnection("jdbc:mysql://poopserver.mysql.database.azure.com/pooporganizer",
-          "poop",
-          "pollerne_1");
+              "poop",
+              "pollerne_1");
       String queryCreate = "DELETE FROM wishes WHERE list_id =?";
       PreparedStatement psts = conn.prepareStatement(queryCreate);
 

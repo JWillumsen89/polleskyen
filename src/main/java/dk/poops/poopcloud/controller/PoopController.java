@@ -6,6 +6,7 @@ import dk.poops.poopcloud.models.WishList;
 import dk.poops.poopcloud.service.WishListService;
 import dk.poops.poopcloud.service.WishService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,7 @@ public class PoopController {
     model.addAttribute("id", id);
     model.addAttribute("wishlist", wishListService.findWishListById(id));
     model.addAttribute("wish", wishService.fetchByID(id));
+
     return "showwishlist";
   }
 
@@ -109,4 +111,12 @@ public class PoopController {
     return"mailsent";
   }
 
+  @GetMapping("/reservewish/{id}")
+  public String reserveWish(@PathVariable("id") int id) {
+    Wish wish = wishService.findById(id);
+    wishService.reserveWish(wish);
+    return "redirect:/showwishlist/" + wish.getList_id();
+  }
+
 }
+
