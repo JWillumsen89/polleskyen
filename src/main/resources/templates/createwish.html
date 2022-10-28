@@ -2,15 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+<!--    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">
     <title>Pølleskyen</title>
     <style>
-
         .container_create{
+            overflow:hidden !important;
             display: grid;
             width: 100vw;
             height: 100vh;
+
         }
+        html, body {margin: 0; height: 100%; overflow: hidden}
 
         @font-face {
             font-family: PølleSkyen;
@@ -29,7 +33,7 @@
             font-size: 22px;
         }
 
-        input[type=submit], a {
+        input[type=submit], .a1 {
             width: 100%;
             background-color: #4CAF50;
             color: black;
@@ -58,14 +62,15 @@
             color: white;
         }
         .card_container{
+            overflow:hidden;
             border-radius: 5px;
             /*background-color: #f2f2f2;*/
             padding: 20px;
             margin-left: 25%;
             margin-top: 5%;
             background-color: #B1D3F1;
-            width: 50vw;
-            height:26vh;
+            width: 900px;
+            height:500px;
         }
 
         label{
@@ -84,12 +89,38 @@
             align-content: center;
             /*font-size: 24px;*/
         }
-
     </style>
 </head>
+<body>
+<div class="navbar" style="position: relative">
+    <div class="navbar_container">
+        <div class="navbar_logo">
+            <a href="/">
+                <img th:src="@{https://i.imgur.com/uO3C3wu.png}" src="https://i.imgur.com/uO3C3wu.png"
+                     style="height: 90px; width: 110px">
+            </a>
+        </div>
+        <div class="center_navbar">
+            <h1>PølleSkyen</h1>
+        </div>
+        <div class="navbar-create">
+            <!-- Knap: opret pølleliste -->
+            <a href="/createwishlist " style="text-decoration: none; color: black">
+                <span>Opret ny Ønskeliste</span>
+            </a>
+        </div>
+        <!-- Knap: Login pølleliste -->
+        <div class="navbar-create" style="text-decoration: none">
+            <!-- indsæt login her -->
+            <a href="/" style="text-decoration: none; color: black">
+                <span>Login</span>
+            </a>
+        </div>
+    </div>
+</div>
+
 <div class="container_create">
     <div class="card_container">
-    <div class="card">
         <form action="/showwishlist/createwish" method="post">
             <label>Navn:
                 <input type="text" name="name" placeholder="Skriv navn til ønsket" required autofocus>
@@ -107,13 +138,23 @@
             <input type="hidden" name="reserved" value="false">
 
             <div class="show">
-                <a th:href="@{'/showwishlist/' +${wishlist.id}}"style="color: black"><span>Gå tilbage</span>
+                <a class="a1" th:href="@{'/showwishlist/' +${wishlist.id}}"style="color: black"><span>Gå tilbage</span>
                 </a></div><div class="show"><input type="submit" value="Opret ønske">
-            </div>
+        </div>
         </form>
     </div>
+</div>
+<footer>
+</footer>
+<div class="footerbox1">
+    <div class="footertittle">Team Pøllerne:</div>
+    <br><br>
+    <div class="footertxt">
+        <p>Ramiladen</p><br>
+        <p>Frederik</p><br>
+        <p>Jonathan</p><br>
+        <p>Thomas</p>
     </div>
 </div>
-
 </body>
 </html>
