@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: PølleSkyen;
-    src: url('../static/fonts/Comfortaa-Regular.ttf');
+    src: url('../fonts/Comfortaa-Regular.ttf');
 }
 
 @media only screen and (min-width: 1000px) {
@@ -45,7 +45,7 @@
 }
 
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1250px) {
     input[type=submit], input[type=button], .a1, show, .card_container {
         width: 100%;
         background-color: #2ea4ff;
@@ -60,7 +60,7 @@
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1250px) {
     input[type=submit], input[type=button], .a1, show, .card_container {
         width: 100%;
         background-color: #2ea4ff;
@@ -79,7 +79,7 @@ input[type=submit]:hover, input[type=button]:hover {
     background-color: #39a7ff;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1250px) {
     .card_container {
         border-radius: 5px;
         padding: 20px;
@@ -91,7 +91,7 @@ input[type=submit]:hover, input[type=button]:hover {
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1250px) {
     .card_container {
         border-radius: 5px;
         padding: 20px;
@@ -104,7 +104,7 @@ input[type=submit]:hover, input[type=button]:hover {
 label {
     font-size: 20px;
     font-family: PølleSkyen;
-    src: url('../static/fonts/Comfortaa-Regular.ttf');
+    src: url('../fonts/Comfortaa-Regular.ttf');
     color: black;
 }
 
