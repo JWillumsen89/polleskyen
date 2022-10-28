@@ -38,9 +38,9 @@ body{
 
 @media only screen and (max-width: 600px) {
     h2,h1,h3,div,div2,div3
-{
-    font-size: 20px;
-}
+    {
+        font-size: 20px;
+    }
 }
 @media only screen and (min-width: 1000px) {
     .navbar_logo {
@@ -50,16 +50,16 @@ body{
         width: 100px
     }
 }
-    @media only screen and (max-width: 1000px) {
-        .navbar_logo {
-            /*display: flex;*/
-            padding: 5px;
-            margin-top: 12.5px;
-            cursor: pointer;
-            height: 50px;
-            width: 65px
-        }
+@media only screen and (max-width: 1000px) {
+    .navbar_logo {
+        /*display: flex;*/
+        padding: 5px;
+        margin-top: 12.5px;
+        cursor: pointer;
+        height: 50px;
+        width: 65px
     }
+}
 
 .center_navbar {
     width: 50%;
@@ -249,8 +249,8 @@ a {
 @media only screen and (max-width: 1000px) {
     footer {
         background-image: url("https://i.imgur.com/fQ9msNB.png");
-/*        background-position: center;
-        background-size: cover;*/
+        /*        background-position: center;
+                background-size: cover;*/
         width: 100vw;
         height: 300px;
         font-family: PølleSkyen;
@@ -366,7 +366,7 @@ div.header {
 .show{
     grid-template-columns: auto auto;
     width: 50%;
-   float: left;
+    float: left;
 }
 
 

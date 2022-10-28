@@ -55,7 +55,7 @@
 
 
         @media only screen and (min-width: 1000px) {
-            input[type=submit], .a1, show, .card_container {
+            input[type=submit], input[type=button], .a1, show, .card_container {
                 width: 100%;
                 background-color: #2ea4ff;
                 color: black;
@@ -70,7 +70,7 @@
         }
 
         @media only screen and (max-width: 1000px) {
-            input[type=submit], .a1, show, .card_container {
+            input[type=submit], input[type=button], .a1, show, .card_container {
                 width: 100%;
                 background-color: #2ea4ff;
                 color: black;
@@ -84,7 +84,7 @@
             }
         }
 
-        input[type=submit]:hover {
+        input[type=submit]:hover, input[type=button]:hover {
             background-color: #39a7ff;
         }
 
@@ -151,8 +151,7 @@
             <input type="hidden" name="reserved" value="false">
 
             <div class="show">
-                <a class="a1" th:href="@{'/showwishlist/' +${wishlist.id}}" style="color: black"><span>Gå tilbage</span>
-                </a></div>
+                <input type="button" value="Fortryd" onclick="history.back()"></div>
             <div class="show"><input type="submit" value="Opret ønske" style="font-family: PølleSkyen;">
             </div>
         </form>
