@@ -13,8 +13,8 @@
 
     <div class="card zoom" th:each="wishlist :${wishlists}"><a th:href="@{'/showwishlist/' +${wishlist.id}}"
                                                                style="color: black">
-        <div class="header"><span th:text="${wishlist.id}" hidden></span>
-            <div class="header_text">Ønske liste</div>
+        <div class="header"><span th:text="${wishlist.id}" hidden></span><img src="https://cdn-icons-png.flaticon.com/512/2543/2543240.png" style="height: 150px; width: 150px; margin-top: 50px">
+            <div class="header_text" style="margin-top: -150px; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: black; ">Ønskeliste</div>
             <br></div>
         <div class="small_header">
             <div class="container"><span th:text="${wishlist.name}"></span></div>
