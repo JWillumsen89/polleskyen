@@ -21,12 +21,17 @@
                                                                                       src="../images/newList.png"
                                                                                       style="width: 30px; height: 30px"><br><span
             style="color: black">Tilføj ønske</span></a></div>
-</div>
 
-<div class="grid-item item4"><a th:href="@{'sharewishlist/' +${wishlist.id}}"><input type="image"
-                                                                                     src="../images/mail.png"
-                                                                                     style="width: 30px; height: 30px"><br><span
-        style="color: black">Del Ønskeseddel</span></a></div>
+    <div class="grid-item item3"><a th:href="@{'sharewishlist/' +${wishlist.id}}"><input type="image"
+                                                                                         src="../images/mail.png"
+                                                                                         style="width: 30px; height: 30px"><br><span
+            style="color: black">Del Ønskeseddel</span></a></div>
+
+    <div class="grid-item item4"><a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="image"
+                                                                                           src="../images/delete.png"
+                                                                                           style="width: 30px; height: 30px"><br><span
+            style="color: black">Slet ønskeliste</span></a></div></a>
+    </div>
 </div>
 
 <div class="flex-container">
@@ -34,10 +39,14 @@
         <span th:text="${wishes.id}" hidden></span>
         <div class="header" th:if="${#bools.isTrue(wishes.reserved)}" style=" -webkit-filter: grayscale(100%)">
 
-                <div class="header_text" style="font-size: 55px"><img src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png" style="height: 150px; width: 150px; margin-top: -50px; -webkit-filter: grayscale(100%)"></div>
-            </div>
-            <div class="header" th:if="${#bools.isFalse(wishes.reserved)}">
-                <div class="header_text" style="font-size: 75px"><img src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png" style="height: 150px; width: 150px; margin-top: -50px"></div>
+            <div class="header_text" style="font-size: 55px"><img
+                    src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png"
+                    style="height: 150px; width: 150px; margin-top: -50px; -webkit-filter: grayscale(100%)"></div>
+        </div>
+        <div class="header" th:if="${#bools.isFalse(wishes.reserved)}">
+            <div class="header_text" style="font-size: 75px"><img
+                    src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png"
+                    style="height: 150px; width: 150px; margin-top: -50px"></div>
         </div>
         <div class="small_header">
             <span th:if="${wishes.name.length()>16}">
