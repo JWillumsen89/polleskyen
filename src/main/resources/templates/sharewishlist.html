@@ -86,8 +86,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">
 </head>
 <body>
-<div th:insert="fragments/header.html">
-</div>
+<div th:insert="fragments/header.html"></div>
 
 <form action="/mail" method="get">
     <div class="container_create">
@@ -104,13 +103,17 @@
                 <input type="submit" value="Del ønskesedlen">
             </div>
         </div>
+        <div th:insert="fragments/footer.html"></div>
     </div>
 
     <input type="hidden" name="wishList" th:value="${wishlist.name}">
     <input type="hidden" name="link"
            th:value="'https://poopcloud.azurewebsites.net/showwishlist/' + ${wishlist.id}">
 </form>
-</div>
-<div th:insert="fragments/footer.html"></div>
+
+
+
+
+
 </body>
 </html>
