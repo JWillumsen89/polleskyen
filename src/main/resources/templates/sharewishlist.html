@@ -2,29 +2,113 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share wishlist</title>
+    <style>
+
+        .container_create {
+            overflow: hidden !important;
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden
+        }
+
+        @font-face {
+            font-family: PølleSkyen;
+            src: url('../static/fonts/Comfortaa-Regular.ttf');
+        }
+
+        input, select {
+
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 22px;
+        }
+
+        input[type=submit], input[type=button], .a1, show {
+            width: 100%;
+            background-color: #2ea4ff;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 26px;
+            text-decoration: none;
+        }
+
+        input[type=submit]:hover {
+            background-color: #39a7ff;
+        }
+
+        .card_container {
+            border-radius: 5px;
+            /*background-color: #f2f2f2;*/
+            padding: 20px;
+            margin-left: 25%;
+            margin-top: 5%;
+            background-color: #B1D3F1;
+            width: 900px;
+            height: 340px;
+        }
+
+        label {
+            font-size: 24px;
+            font-family: PølleSkyen;
+            src: url('../static/fonts/Comfortaa-Regular.ttf');
+            color: black;
+        }
+
+        .show {
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 50%;
+            float: left;
+            justify-content: center;
+            align-content: center;
+            /*font-size: 24px;*/
+        }
+
+    </style>
     <title>Share wishlist</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">
 </head>
 <body>
 <div th:insert="fragments/header.html">
 </div>
-<script>
-    try {
-        adddlert("Welcome guest!");
-    }
-    catch(err) {
-        document.getElementById("demo").innerHTML = err.message;
-    }
-</script>
 
 <form action="/mail" method="get">
-    <div>
-  <label for="mail">Email: </label>
-  <input id="mail" type="email" name="mail" placeholder="Enter email" autofocus required>
-  <input type="hidden" name="wishList" th:value="${wishlist.name}">
-  <input type="hidden" name="link"  th:value="'https://poopcloud.azurewebsites.net/showwishlist/' + ${wishlist.id}">
-        <input type="submit" value="Send ønskeseddel">
+    <div class="container_create">
+        <div class="card_container" style="line-height: 1.6">
+            <strong><h2 style="color: black" th:text="${wishlist.name}"></h2></strong>
+            <label>Email:
+                <input id="mail" type="email" name="mail" placeholder="Enter email" autofocus required>
+            </label>
+            <br>
+            <div class="show">
+                <input type="button" value="Fortryd" onclick="history.back()">
+            </div>
+            <div class="show">
+                <input type="submit" value="Del ønskesedlen">
+            </div>
+        </div>
     </div>
+
+    <input type="hidden" name="wishList" th:value="${wishlist.name}">
+    <input type="hidden" name="link"
+           th:value="'https://poopcloud.azurewebsites.net/showwishlist/' + ${wishlist.id}">
 </form>
 </div>
 <div th:insert="fragments/footer.html"></div>

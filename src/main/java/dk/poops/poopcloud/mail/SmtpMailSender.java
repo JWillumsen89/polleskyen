@@ -7,7 +7,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 
-public class SmtpMailSender implements MailSender{
+public class SmtpMailSender implements MailSender {
 
   private JavaMailSender javaMailSender;
 
@@ -20,13 +20,18 @@ public class SmtpMailSender implements MailSender{
     MimeMessage message = javaMailSender.createMimeMessage();
     MimeMessageHelper helper;
 
-    helper = new MimeMessageHelper(message, true);
+    try {
 
-    helper.setSubject(subject);
-    helper.setTo(to);
-    helper.setText(body,true);
 
-    javaMailSender.send(message);
+      helper = new MimeMessageHelper(message, true);
 
+      helper.setSubject(subject);
+      helper.setTo(to);
+      helper.setText(body, true);
+
+      javaMailSender.send(message);
+    } catch(MessagingException e) {
+      System.out.println(e);
+    }
   }
 }
