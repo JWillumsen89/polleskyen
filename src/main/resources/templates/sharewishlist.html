@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Share wishlist</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">
 </head>
 <body>
-
+<div th:insert="fragments/header.html">
+</div>
 <script>
     try {
         adddlert("Welcome guest!");
@@ -24,6 +26,7 @@
         <input type="submit" value="Send ønskeseddel">
     </div>
 </form>
-
+</div>
+<div th:insert="fragments/footer.html"></div>
 </body>
 </html>
