@@ -4,20 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pølleskyen</title>
+    <style>
+        .container_create{
+            overflow:hidden !important;
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        html, body {margin: 0; height: 100%; overflow: hidden}
+
+        @font-face {
+            font-family: PølleSkyen;
+            src: url('../static/fonts/Comfortaa-Regular.ttf');
+        }
+
+        input, select {
+
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 22px;
+        }
+
+        input[type=submit], .a1, show {
+            width: 100%;
+            background-color: #2ea4ff;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 26px;
+            text-decoration: none;
+        }
+
+        input[type=submit]:hover {
+            background-color: #39a7ff;
+        }
+
+        .card_container{
+            border-radius: 5px;
+            /*background-color: #f2f2f2;*/
+            padding: 20px;
+            margin-left: 25%;
+            margin-top: 5%;
+            background-color: #B1D3F1;
+            width: 900px;
+            height:200px;
+        }
+
+        label{
+            font-size: 24px;
+            font-family: PølleSkyen;
+            src: url('../static/fonts/Comfortaa-Regular.ttf');
+            color: black;
+        }
+
+        .show{
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 50%;
+            float: left;
+            justify-content: center;
+            align-content: center;
+            /*font-size: 24px;*/
+        }
+    </style>
     <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" href="/css/style.css">
 </head>
 <body>
 <div th:insert="fragments/header.html"></div>
-<div class="flex-container">
-    <h2>Lav en ny Pølleliste</h2>
-</div>
-<div class="flex-container1">
-    <div class="card1">
+<div class="container_create">
+    <div class="card_container">
         <form action="createwishlist" method="post">
             <label>Navn:
                 <input type="text" name="name" placeholder="Giv din ønskeliste et navn">
             </label>
-            <input type="submit" value="Opret din ønkeliste">
+            <div class="show">
+                <a class="a1" th:href="@{'/'}"style="color: black"><span>Gå tilbage</span>
+                </a></div><div class="show"><input type="submit" value="Opret ønske" style="font-family: PølleSkyen;">
+        </div>
         </form>
     </div>
 </div>
