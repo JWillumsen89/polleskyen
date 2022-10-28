@@ -51,7 +51,7 @@ body{
 
 
 @media only screen and (min-width: 1250px) {
-    input[type=submit], input[type=button], .a1, show, .card_container {
+    input[type=submit], input[type=button], .a1, show {
         width: 100%;
         background-color: #2ea4ff;
         color: black;
@@ -66,7 +66,7 @@ body{
 }
 
 @media only screen and (max-width: 1250px) {
-    input[type=submit], input[type=button], .a1, show, .card_container {
+    input[type=submit], input[type=button], .a1, show {
         width: 100%;
         background-color: #2ea4ff;
         color: black;

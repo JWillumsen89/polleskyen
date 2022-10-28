@@ -12,8 +12,8 @@
 
 <form action="/mail" method="get">
     <div class="container_create">
-        <div class="card_container" style="line-height: 1.6">
-            <strong><h2 style="color: black" th:text="${wishlist.name}"></h2></strong>
+        <div class="card_container" style="line-height: 1.6; font-size: 24px">Del Ønskeliste:
+            <strong><div style="line-height: 1.6em;"><span th:text="${wishlist.name}"></span></div></span></strong>
             <label>Email:
                 <input id="mail" type="email" name="mail" placeholder="Enter email" autofocus required>
             </label>
