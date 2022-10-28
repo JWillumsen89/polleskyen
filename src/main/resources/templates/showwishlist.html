@@ -32,13 +32,12 @@
 <div class="flex-container">
     <div class="card" th:each="wishes :${wish}">
         <span th:text="${wishes.id}" hidden></span>
-        <div class="header">
-            <span th:if="${#bools.isTrue(wishes.reserved)}">
+        <div class="header" th:if="${#bools.isTrue(wishes.reserved)}" style=" -webkit-filter: grayscale(100%)">
+
                 <div class="header_text" style="font-size: 55px"><img src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png" style="height: 150px; width: 150px; margin-top: -50px; -webkit-filter: grayscale(100%)"><p style="margin-top: -120px; position: absolute; -webkit-text-stroke-width: 1px;-webkit-text-stroke-color: black" >RESERVERET</p></div>
-            </span>
-            <span th:if="${#bools.isFalse(wishes.reserved)}">
+            </div>
+            <div class="header" th:if="${#bools.isFalse(wishes.reserved)}">
                 <div class="header_text" style="font-size: 75px"><img src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png" style="height: 150px; width: 150px; margin-top: -50px"></div>
-            </span>
         </div>
         <div class="small_header">
             <div style="line-height: 1.6em;"><span th:text="${wishes.name}"></span></div>
