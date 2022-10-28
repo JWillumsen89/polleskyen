@@ -6,6 +6,15 @@
 </head>
 <body>
 
+<script>
+    try {
+        adddlert("Welcome guest!");
+    }
+    catch(err) {
+        document.getElementById("demo").innerHTML = err.message;
+    }
+</script>
+
 <form action="/mail" method="get">
     <div>
   <label for="mail">Email: </label>

@@ -7,6 +7,7 @@ import dk.poops.poopcloud.service.WishListService;
 import dk.poops.poopcloud.service.WishService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
+import org.springframework.mail.MailSendException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,107 +17,112 @@ import javax.mail.MessagingException;
 @Controller
 public class PoopController {
 
-  @Autowired
-  MailSender mailSender;
+    @Autowired
+    MailSender mailSender;
 
-  @Autowired
-  WishListService wishListService;
-  @Autowired
-  WishService wishService;
+    @Autowired
+    WishListService wishListService;
+    @Autowired
+    WishService wishService;
 
-  @GetMapping("/")
-  public String index(Model model) {
-    model.addAttribute("wishlists", wishListService.fetchAllWishLists());
-    return "index";
-  }
 
-  @GetMapping("/showwishlist/{id}")
-  public String showWishList(@PathVariable("id") int id, Model model) {
-    model.addAttribute("id", id);
-    model.addAttribute("wishlist", wishListService.findWishListById(id));
-    model.addAttribute("wish", wishService.fetchByID(id));
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("wishlists", wishListService.fetchAllWishLists());
+        return "index";
+    }
 
-    return "showwishlist";
-  }
+    @GetMapping("/showwishlist/{id}")
+    public String showWishList(@PathVariable("id") int id, Model model) {
+        model.addAttribute("id", id);
+        model.addAttribute("wishlist", wishListService.findWishListById(id));
+        model.addAttribute("wish", wishService.fetchByID(id));
 
-  @GetMapping("/updatewishlist/{id}")
-  public String updateWishlist(@PathVariable("id") int id, Model model) {
-    model.addAttribute("id", id);
-    model.addAttribute("wishlist", wishListService.findWishListById(id));
-    return "updatewishlist";
-  }
+        return "showwishlist";
+    }
 
-  @GetMapping("/createwishlist")
-  public String showCreateWishList() {
-    return "createwishlist";
-  }
+    @GetMapping("/updatewishlist/{id}")
+    public String updateWishlist(@PathVariable("id") int id, Model model) {
+        model.addAttribute("id", id);
+        model.addAttribute("wishlist", wishListService.findWishListById(id));
+        return "updatewishlist";
+    }
 
-  @PostMapping("/createwishlist")
-  public String createWishlist(@ModelAttribute WishList wishList) {
-    wishListService.saveWishList(wishList);
+    @GetMapping("/createwishlist")
+    public String showCreateWishList() {
+        return "createwishlist";
+    }
 
-    return "redirect:/";
-  }
+    @PostMapping("/createwishlist")
+    public String createWishlist(@ModelAttribute WishList wishList) {
+        wishListService.saveWishList(wishList);
 
-  @PostMapping("/updatewishlist")
-  public String saveWishlist(@ModelAttribute WishList wishList) {
-    wishListService.saveWishList(wishList);
-    return "redirect:/showwishlist/" + wishList.getId();
-  }
+        return "redirect:/";
+    }
 
-  @GetMapping("/deletewishlist/{id}")
-  public String deleteWishList(@PathVariable("id") int id) {
-    wishListService.deleteWishList(id);
-    return "redirect:/";
-  }
+    @PostMapping("/updatewishlist")
+    public String saveWishlist(@ModelAttribute WishList wishList) {
+        wishListService.saveWishList(wishList);
+        return "redirect:/showwishlist/" + wishList.getId();
+    }
 
-  @GetMapping("/showwishlist/createwish/{id}")
-  public String showWishCreateForm(@PathVariable("id") int id, Model model) {
-    model.addAttribute("wishlist", wishListService.findWishListById(id));
-    return "createwish";
-  }
+    @GetMapping("/deletewishlist/{id}")
+    public String deleteWishList(@PathVariable("id") int id) {
+        wishListService.deleteWishList(id);
+        return "redirect:/";
+    }
 
-  @PostMapping("/showwishlist/createwish")
-  public String createWish(@ModelAttribute Wish wish) {
-    wishService.saveWish(wish);
-    return "redirect:/showwishlist/" + wish.getList_id();
-  }
+    @GetMapping("/showwishlist/createwish/{id}")
+    public String showWishCreateForm(@PathVariable("id") int id, Model model) {
+        model.addAttribute("wishlist", wishListService.findWishListById(id));
+        return "createwish";
+    }
 
-  @GetMapping("deletewish/{id}/{wishid}")
-  public String deleteWish(@PathVariable("wishid") int wishid, @PathVariable("id")int id) {
-    wishService.deleteWish(wishid);
-    return "redirect:/showwishlist/" +  id;
-  }
+    @PostMapping("/showwishlist/createwish")
+    public String createWish(@ModelAttribute Wish wish) {
+        wishService.saveWish(wish);
+        return "redirect:/showwishlist/" + wish.getList_id();
+    }
 
-  @GetMapping("/showwishlist/sharewishlist/{id}")
-  public String shareMailSite(@PathVariable("id")int wishListId, Model model) {
-   model.addAttribute("wishlist", wishListService.findWishListById(wishListId));
-    return "sharewishlist";
-  }
+    @GetMapping("deletewish/{id}/{wishid}")
+    public String deleteWish(@PathVariable("wishid") int wishid, @PathVariable("id") int id) {
+        wishService.deleteWish(wishid);
+        return "redirect:/showwishlist/" + id;
+    }
 
-  @GetMapping("/mail")
-  public String mail(@RequestParam("mail") String mail, @RequestParam("wishList") String wishList, @RequestParam("link") String link) throws MessagingException {
+    @GetMapping("/showwishlist/sharewishlist/{id}")
+    public String shareMailSite(@PathVariable("id") int wishListId, Model model) {
+        model.addAttribute("wishlist", wishListService.findWishListById(wishListId));
+        return "sharewishlist";
+    }
 
-    mailSender.send(mail, "You have been sent a wish list - " + wishList,
-        """
-            See all the wishes and reserve the one you are buying.
-            
-            Click this link:""" + " " + link);
+    @GetMapping("/mail")
+    public String mail(@RequestParam("mail") String mail, @RequestParam("wishList") String wishList, @RequestParam("link") String link) throws MessagingException {
 
-    return "mailsent";
-  }
+        try {
+            mailSender.send(mail, "You have been sent a wish list - " + wishList,
+                    """
+                            See all the wishes and reserve the one you are buying.
+                                              
+                            Click this link:""" + " " + link);
 
-  @GetMapping("/mailtest")
-  public String mailTest() {
-    return"mailsent";
-  }
+            return "mailsent";
+        } catch (MailSendException e) {
+            return "redirect:/";
+        }
+    }
 
-  @GetMapping("/reservewish/{id}")
-  public String reserveWish(@PathVariable("id") int id) {
-    Wish wish = wishService.findById(id);
-    wishService.reserveWish(wish);
-    return "redirect:/showwishlist/" + wish.getList_id();
-  }
+    @GetMapping("/mailtest")
+    public String mailTest() {
+        return "mailsent";
+    }
+
+    @GetMapping("/reservewish/{id}")
+    public String reserveWish(@PathVariable("id") int id) {
+        Wish wish = wishService.findById(id);
+        wishService.reserveWish(wish);
+        return "redirect:/showwishlist/" + wish.getList_id();
+    }
 
 }
 

@@ -16,15 +16,15 @@ public class WishService {
     @Autowired
     WishRepo wishRepo;
 
-    public void saveWish(Wish wish){
+    public void saveWish(Wish wish) {
         wishJPARepo.save(wish);
     }
 
-    public List<Wish> fetchAllWishes(){
+    public List<Wish> fetchAllWishes() {
         return wishJPARepo.findAll();
     }
 
-    public List<Wish> fetchByID(int id){
+    public List<Wish> fetchByID(int id) {
         return wishJPARepo.findWishByList_id(id);
     }
 
@@ -33,15 +33,14 @@ public class WishService {
     }
 
 
-    public void reserveWish(Wish wish){
+    public void reserveWish(Wish wish) {
         wishRepo.reserveWish(wish);
 
     }
 
-    public Wish findById(int id){
+    public Wish findById(int id) {
         return wishJPARepo.getReferenceById(id);
     }
-
 
 
 }

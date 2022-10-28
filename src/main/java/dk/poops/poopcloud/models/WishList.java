@@ -6,37 +6,37 @@ import javax.persistence.*;
 @Table(name = "wishlist")
 public class WishList {
 
-  @Id
-  private int id;
+    @Id
+    private int id;
 
-  private String name;
+    private String name;
 
-  public WishList() {
-  }
+    public WishList() {
+    }
 
-  public WishList(int id, String name) {
-    this.id = id;
-    this.name = name;
-  }
+    public WishList(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-  public int getId() {
-    return id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-  @Override
-  public String toString() {
-    return id + " " + name;
-  }
+    @Override
+    public String toString() {
+        return id + " " + name;
+    }
 }
