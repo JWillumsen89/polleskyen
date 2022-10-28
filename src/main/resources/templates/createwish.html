@@ -5,172 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pølleskyen</title>
     <style>
-        body {
-            background: transparent;
-        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar {
-            background: white;
-            height: 110px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 2;
-        }
-
-        .navbar_container {
-            box-shadow: 0px 3px 5px rgb(0, 0, 0, 20%);
-            display: flex;
-            justify-content: left;
-            height: 80px;
-            z-index: 1;
-            width: 100%;
-
-        }
-
-        .navbar_logo {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .center_navbar {
-            width: 70%;
-            height: 100px;
-            /*padding: 0 10px;*/
-            /*background-color: black;*/
-        }
-
-        @media only screen and (min-width: 1000px) {
-            .navbar-create {
-                padding: 20px 30px;
-                display: flex;
-                justify-content: end;
-                text-align: center;
-                box-shadow: none;
-                color: black;
-                font-size: 26px;
-            }
-        }
-
-        @media only screen and (max-width: 1000px) {
-            .navbar-create {
-                padding: 20px 30px;
-                flex-direction: column;
-                display: flex;
-                justify-content: end;
-                text-align: center;
-                box-shadow: none;
-                color: black;
-                font-size: 18px;
-            }
-        }
-
-
-        h1 {
-            font-family: PølleSkyen;
-            /*text-shadow: 1px 1px 2px black;*/
-            text-align: left;
-            font-size: 60px;
-            color: #B1D3F1;
-        }
-
-        h2 {
-            font-family: PølleSkyen;
-            /*text-shadow: 1px 1px 2px black;*/
-            text-align: center;
-            font-size: 60px;
-            color: #B1D3F1;
-        }
-
-        h3 {
-            font-family: PølleSkyen;
-            /*text-shadow: 1px 1px 2px black;*/
-            text-align: center;
-            font-size: 40px;
-            color: #B1D3F1;
-        }
-
-        div {
-            font-family: PølleSkyen;
-        }
-
-        div2 {
-            font-family: PølleSkyen;
-            font-size: small;
-        }
-
-        a {
-            text-decoration: none !important;
-        }
-
-        .grid-container_wish > div {
-            text-align: center;
-            padding: 20px 0;
-            font-size: 24px;
-        }
-
-
-        a {
-            text-decoration: none !important;
-        }
-
-
-        /*FOOTER*/
-
-        footer {
-            background-image: url("https://i.imgur.com/fQ9msNB.png");
-            background-position: center;
-            background-size: cover;
-            min-width: 2000px;
-            min-height: 596px;
-            font-family: PølleSkyen;
-        }
-
-        .footerbox1 {
-            margin-top: -100px;
-            margin-left: 100px;
-            margin-bottom: 200px;
-        }
-
-        .footertittle {
-            font-size: x-large;
-
-        }
-
-        .footertxt {
-            font-size: medium;
-            color: #B1D3F1;
-        }
-
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center
-        }
-
-        .flex-container > div {
-            background-color: #B1D3F1;
-            width: 200px;
-            margin: 30px;
-            text-align: center;
-            line-height: 75px;
-            font-size: 30px;
-        }
-
-        div.card {
-            width: 600px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
-            color: white;
+        .container_create{
+            display: grid;
+            width: 100vw;
+            height: 100vh;
         }
 
         @font-face {
@@ -178,71 +17,103 @@
             src: url('../static/fonts/Comfortaa-Regular.ttf');
         }
 
+        input, select {
+
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 22px;
+        }
+
+        input[type=submit], a {
+            width: 100%;
+            background-color: #4CAF50;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 26px;
+            text-decoration: none;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+
+        }
+
+        div.card {
+
+            /*background-color: #e5f3ff;*/
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            text-align: center;
+            color: white;
+        }
+        .card_container{
+            border-radius: 5px;
+            /*background-color: #f2f2f2;*/
+            padding: 20px;
+            margin-left: 25%;
+            margin-top: 5%;
+            background-color: #B1D3F1;
+            width: 50vw;
+            height:26vh;
+        }
+
+        label{
+            font-size: 24px;
+            font-family: PølleSkyen;
+            src: url('../static/fonts/Comfortaa-Regular.ttf');
+            color: black;
+        }
+
+        .show{
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 50%;
+            float: left;
+            justify-content: center;
+            align-content: center;
+            /*font-size: 24px;*/
+        }
+
     </style>
 </head>
-<body>
-<div class="navbar">
-    <div class="navbar_container">
-        <div class="navbar_logo">
-            <a href="/">
-                <img th:src="@{https://i.imgur.com/uO3C3wu.png}" src="https://i.imgur.com/uO3C3wu.png"
-                     style="height: 90px; width: 110px">
-            </a>
-        </div>
-        <div class="center_navbar">
-            <h1>PølleSkyen</h1>
-        </div>
-        <div class="navbar-create">
-            <!-- Knap: opret pølleliste -->
-            <a href="/createwishlist " style="text-decoration: none; color: black">
-                <span>Opret ny Ønskeliste</span>
-            </a>
-        </div>
-        <!-- Knap: Login pølleliste -->
-        <div class="navbar-create" style="text-decoration: none">
-            <!-- indsæt login her -->
-            <a href="/" style="text-decoration: none; color: black">
-                <span>Login</span>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="flex-container">
-    <h3>Lav en ny Pølle</h3>
-</div>
-<div class="flex-container">
+<div class="container_create">
+    <div class="card_container">
     <div class="card">
         <form action="/showwishlist/createwish" method="post">
             <label>Navn:
-                <input type="text" name="name" placeholder="Giv din Pølle et navn" required>
+                <input type="text" name="name" placeholder="Skriv navn til ønsket" required autofocus>
             </label><br>
             <label>Pris:
-                <input type="number" step="0.01" name="price" placeholder="Giv din Pølle en pris">
+                <input type="number" step="0.01" name="price" placeholder="Skriv pris på ønsket">
             </label><br>
             <label>Link:
-                <input type="url" name="link" placeholder="Giv link til din Pølle">
+                <input type="url" name="link" placeholder="Link til ønsket">
             </label><br>
             <label>Beskrivelse:
-                <input type="text" name="description" placeholder="Beskriv din Pølle">
+                <input type="text" name="description" placeholder="Beskrivelse til ønsket">
             </label><br>
             <input type="hidden" name="list_id" th:value="${wishlist.id}">
             <input type="hidden" name="reserved" value="false">
-            <input type="submit" value="Opret din PølleListe">
+
+            <div class="show">
+                <a th:href="@{'/showwishlist/' +${wishlist.id}}"style="color: black"><span>Gå tilbage</span>
+                </a></div><div class="show"><input type="submit" value="Opret ønske">
+            </div>
         </form>
     </div>
-</div>
-<footer>
-</footer>
-<div class="footerbox1">
-    <div class="footertittle">Team Pøllerne:</div>
-    <br><br>
-    <div class="footertxt">
-        <p>Ramiladen</p><br>
-        <p>Frederik</p><br>
-        <p>Jonathan</p><br>
-        <p>Thomas</p>
     </div>
 </div>
+
 </body>
 </html>
