@@ -104,4 +104,9 @@ public class PoopController {
     return "mailsent";
   }
 
+  @GetMapping("/mailtest")
+  public String mailTest() {
+    return"mailsent";
+  }
+
 }

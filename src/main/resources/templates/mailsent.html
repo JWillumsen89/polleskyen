@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv = "refresh" content = "4; url = /" />
+    <title>Pølleskyen</title>
+    <link rel="stylesheet" type="text/css" th:href="@{../css/style.css}" href="../static/css/style.css">
 </head>
 <body>
-<p>Ønskeseddel delt</p>
-<script>
-    setTimeout(function(){
-        window.location.href = '/';
-    }, 3000);
-</script>
+<div th:insert="fragments/header.html">
+</div>
+<div class="flex-container">
+    <div class="card">
+    <p>Ønskeseddel delt</p>
+    </div>
+    </div>
+
+<div th:insert="fragments/footer.html"></div>
+
+
+<meta name="description" content="Poopcloud: Make your poops come true"/>
+<meta property="og:image" content="https://i.imgur.com/uO3C3wu.png"/>
+<meta property="og:image:secure_url" content="https://i.imgur.com/uO3C3wu.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="400"/>
+<meta property="og:image:height" content="300"/>
+<meta property="og:image:alt" content="A poop on a cloud"/>
 
 </body>
 </html>
