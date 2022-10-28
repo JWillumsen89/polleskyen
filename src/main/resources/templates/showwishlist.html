@@ -11,7 +11,7 @@
 
 <div th:insert="fragments/header.html"></div>
 
-<div class="grid-container" style="overflow: hidden">
+<div class="grid-container">
     <div class="grid-item item1"><h2 th:text="${wishlist.name}"></h2></div>
     <div class="grid-item item3"><a th:href="@{'/updatewishlist/' +${wishlist.id}}"><input type="image"
                                                                                            src="../images/update.png"
@@ -40,7 +40,10 @@
                 <div class="header_text" style="font-size: 75px"><img src="https://cdn-icons-png.flaticon.com/512/2854/2854363.png" style="height: 150px; width: 150px; margin-top: -50px"></div>
         </div>
         <div class="small_header">
-            <div style="line-height: 1.6em;"><span th:text="${wishes.name}"></span></div>
+            <span th:if="${wishes.name.length()>16}">
+            <div style="line-height: 1.6em;"><span th:text="${#strings.substring(wishes.name,0,16)} + .."></span></div></span>
+            <span th:if="${wishes.name.length()<=16}">
+                <div style="line-height: 1.6em;"><span th:text="${wishes.name}"></span></div></span>
             <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
             <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>
             <br>
@@ -66,7 +69,10 @@
         <div th:id="'popup1' + ${wishes.id}" class="overlay" style="position: absolute; z-index: 1">
             <div class="popup">
                 <a class="close" href="#">&times;</a>
-                <h5 th:text="${wishes.name}">Name</h5>
+                <span th:if="${wishes.name.length()>30}">
+                    <h5 th:text="${#strings.substring(wishes.name,0,31)} + '...'">Name</h5></span>
+                <span th:if="${wishes.name.length()<=30}">
+                    <h5 th:text="${wishes.name}">Name</h5></span>
                 <br>
                 <div2><span th:if="${wishes.price.equals('')}"><br></span></div2>
                 <div2><span th:if="${!wishes.price.equals('')}" th:text="${wishes.price} + ' DKK'"></span></div2>

@@ -17,7 +17,10 @@
             <div class="header_text"></div>
             <br></div>
         <div class="small_header">
-            <div class="container"><span th:text="${wishlist.name}"></span></div>
+                 <span th:if="${wishlist.name.length()>16}">
+            <div style="line-height: 1.6em;"><span th:text="${#strings.substring(wishlist.name,0,16)} + .."></span></div></span>
+                <span th:if="${wishlist.name.length()<=16}">
+                <div style="line-height: 1.6em;"><span th:text="${wishlist.name}"></span></div></span>
             <a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="image" src="../images/delete.png"
                                                                       style="width: 30px; height: 30px"></a>
         </div>

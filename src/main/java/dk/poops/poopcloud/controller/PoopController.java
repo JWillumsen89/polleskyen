@@ -38,6 +38,7 @@ public class PoopController {
         model.addAttribute("wishlist", wishListService.findWishListById(id));
         model.addAttribute("wish", wishService.fetchByID(id));
 
+
         return "showwishlist";
     }
 

@@ -134,7 +134,7 @@
     <div class="card_container">
         <form action="createwishlist" method="post">
             <label>Navn:
-                <input type="text" name="name" placeholder="Giv din ønskeliste et navn">
+                <input type="text" name="name" placeholder="Giv din ønskeliste et navn" maxlength="45" required>
             </label>
             <div class="show">
                 <a class="a1" th:href="@{'/'}"style="color: black"><span>Gå tilbage</span>
