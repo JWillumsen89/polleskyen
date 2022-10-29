@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pølleskyen</title>
+  <link rel="stylesheet" type="text/css" th:href="@{../css/style.css}" href="../static/css/style.css">
+</head>
+<body>
+<div th:insert="fragments/header.html">
+</div>
+<div class="flex-container">
+
+  <div class="card zoom" th:each="wishlist :${wishlists}"><a th:href="@{'/showwishlist/' +${wishlist.id}}"
+                                                             style="color: black">
+    <div class="header"><span th:text="${wishlist.id}" hidden></span><img src="https://cdn-icons-png.flaticon.com/512/2543/2543240.png" style="height: 150px; width: 150px; margin-top: 50px">
+      <div class="header_text"></div>
+      <br></div>
+    <div class="small_header">
+                 <span th:if="${wishlist.name.length()>16}">
+            <div style="line-height: 1.6em;"><span th:text="${#strings.substring(wishlist.name,0,16)} + .."></span></div></span>
+      <span th:if="${wishlist.name.length()<=16}">
+                <div style="line-height: 1.6em;"><span th:text="${wishlist.name}"></span></div></span>
+      <a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="image" src="../images/delete.png"
+                                                                style="width: 30px; height: 30px"></a>
+    </div>
+  </a>
+  </div>
+
+  <!-- <a th:href="@{'/updatewishlist/' +${wishlist.id}}" target="myiframe"><input type="button" value="iFrame" onclick="toggle(this)"></a>
+  <iframe id="myiframe" style="height:0px;width:100%;" hidden></iframe>-->
+</div>
+</div>
+<div th:insert="fragments/footer.html"></div>
+
+
+<meta name="description" content="Poopcloud: Make your poops come true"/>
+<meta property="og:image" content="https://i.imgur.com/uO3C3wu.png"/>
+<meta property="og:image:secure_url" content="https://i.imgur.com/uO3C3wu.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="400"/>
+<meta property="og:image:height" content="300"/>
+<meta property="og:image:alt" content="A poop on a cloud"/>
+
+</body>
+
+</html>

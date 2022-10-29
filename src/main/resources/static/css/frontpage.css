@@ -1,0 +1,50 @@
+.imageTextBoxContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-top: 200px;
+    flex-direction: row
+}
+
+@media only screen and (max-width: 1000px){
+    .imageTextBoxContainer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        margin-top: 200px;
+        flex-direction: column;
+    }
+}
+
+.imageContainer{
+    margin-top: 300px;
+    display: flex;
+    height: auto;
+    width: 100%;
+}
+
+.textContainer{
+    margin: 100px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.textContainerTop{
+    margin: 100px;
+    max-width: 1000px;
+    text-align: left;
+}
+
+.textContainerBig{
+    margin-top: 100px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+}

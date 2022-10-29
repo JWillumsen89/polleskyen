@@ -5,31 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pølleskyen</title>
     <link rel="stylesheet" type="text/css" th:href="@{../css/style.css}" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{../css/frontpage.css}" href="../static/css/frontpage.css">
 </head>
 <body>
 <div th:insert="fragments/header.html">
 </div>
-<div class="flex-container">
 
-    <div class="card zoom" th:each="wishlist :${wishlists}"><a th:href="@{'/showwishlist/' +${wishlist.id}}"
-                                                               style="color: black">
-        <div class="header"><span th:text="${wishlist.id}" hidden></span><img src="https://cdn-icons-png.flaticon.com/512/2543/2543240.png" style="height: 150px; width: 150px; margin-top: 50px">
-            <div class="header_text"></div>
-            <br></div>
-        <div class="small_header">
-                 <span th:if="${wishlist.name.length()>16}">
-            <div style="line-height: 1.6em;"><span th:text="${#strings.substring(wishlist.name,0,16)} + .."></span></div></span>
-                <span th:if="${wishlist.name.length()<=16}">
-                <div style="line-height: 1.6em;"><span th:text="${wishlist.name}"></span></div></span>
-            <a th:href="@{'/deletewishlist/' +${wishlist.id}}"><input type="image" src="../images/delete.png"
-                                                                      style="width: 30px; height: 30px"></a>
-        </div>
-    </a>
+<div class="imageTextBoxContainer" style="margin-top: 100px">
+    <div class="textContainerTop">
+        <h2>GEM OG DEL
+            ALLE DINE ØNSKER</h2><br>
+        <h5>Pølleskyen gør det let for dig at gemme og dele alle
+            dine ønsker med venner og familie.</h5>
     </div>
-
-    <!-- <a th:href="@{'/updatewishlist/' +${wishlist.id}}" target="myiframe"><input type="button" value="iFrame" onclick="toggle(this)"></a>
-    <iframe id="myiframe" style="height:0px;width:100%;" hidden></iframe>-->
+    <div>
+        <img src="../images/GaveSky.png">
+    </div>
 </div>
+
+<div class="imageTextBoxContainer" style="margin-top: 100px">
+    <div class="textContainerBig">
+    <h2>MERE END 10 MILLARDER PØLLESKYER</h2><br>
+    <h5>Pølleskyen er Danmarks mest fortrukkende sted til at lave dine ønskesedler.
+    Vores mål er at gøre det nemt at gemme og dele ønsker.</h5>
+    </div>
+</div>
+
+<div class="flex-container" style="margin-top: 100px; margin-bottom: 200px">
+    <a th:href="@{'/createwishlist'}"><input type="image" src="../images/OpretØnskeliste.png" width="350px" height="auto"></a>
+</div>
+
+<div class="flex-container" style="margin-top: 100px">
+    <h2>SÅDAN VIRKER PØLLESKYEN</h2>
+</div>
+<div class="imageTextBoxContainer" style="margin-top: 200px">
+    <div>
+        <img src="../images/DelØnsker.png">
+    </div>
+    <div class="textContainer">
+        <h6>DEL DINE ØNSKER MED FAMILIE OG VENNER</h6>
+        <h7>På den måde er det let for andre at finde den helt rigtige gave til dig.</h7>
+    </div>
+</div>
+
+<div class="imageTextBoxContainer">
+    <div class="textContainer">
+        <h6>UNDGÅ AT FÅ DEN SAMME GAVE TO GANGE</h6>
+        <h7>Din familie og dine venner har mulighed for at reservere ønsker på din pølleseddel.</h7>
+    </div>
+    <div>
+        <img src="../images/Info1.png">
+    </div>
+</div>
+
+<div class="flex-container" style="margin-top: 300px">
+    <a th:href="@{'/wishlists'}"><input type="image" src="../images/SeØnskelister.png" width="350px" height="auto"></a><br>
 </div>
 <div th:insert="fragments/footer.html"></div>
 
@@ -43,20 +73,5 @@
 <meta property="og:image:alt" content="A poop on a cloud"/>
 
 </body>
-<!--
-<script>
-    let toggle = button => {
-        let element = document.getElementById("myiframe");
-        let hidden = element.getAttribute("hidden");
 
-        if (hidden) {
-            element.removeAttribute("hidden");
-            button.innerText = "Hide Iframe";
-        } else {
-            element.setAttribute("hidden", "hidden");
-            button.innerText = "Show Iframe";
-        }
-    }
-</script>
--->
 </html>

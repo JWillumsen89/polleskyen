@@ -1,6 +1,5 @@
 body{
     background:transparent;
-    zoom: 75%;
 }
 
 .wishBox {
@@ -129,7 +128,6 @@ body{
     h1 {
         font-family: PølleSkyen;
         padding-top: 15px;
-        /*text-shadow: 1px 1px 2px black;*/
         text-align: left;
         font-size: 60px;
         color: #7fbbef;
@@ -137,7 +135,6 @@ body{
 }
 h2 {
     font-family: PølleSkyen;
-    /*text-shadow: 1px 1px 2px black;*/
     text-align: center;
     font-size: 60px;
     color: #B1D3F1;
@@ -145,18 +142,30 @@ h2 {
 
 h3 {
     font-family: PølleSkyen;
-    /*text-shadow: 1px 1px 2px black;*/
     text-align: center;
     font-size: 40px;
     color: #B1D3F1;
 }
 h5 {
     font-family: PølleSkyen;
-    /*text-shadow: 1px 1px 2px black;*/
     text-align: center;
     font-size: 1.5em;
     color: black;
 }
+h6 {
+    font-family: PølleSkyen;
+    text-align: left;
+    font-size: 30px;
+    color: #B1D3F1;
+}
+
+h7 {
+    font-family: PølleSkyen;
+    text-align: left;
+    font-size: 1em;
+    color: black;
+}
+
 
 div{
     font-family: PølleSkyen;
@@ -340,7 +349,6 @@ div.card {
     justify-content: center;
     margin-top: 100px;
     font-size: 55px;
-
 }
 
 div.header {
@@ -379,22 +387,4 @@ div.container {
 
 .zoom:hover {
     transform: scale(1.1);
-}
-
-.button1 {
-    grid-template-columns: auto auto;
-    background-color: white;
-    color: black;
-    border: 2px solid lightgrey;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.button1:hover{
-    background-color: #B1D3F1;
-    border: 2px solid  #B1D3F1;
 }

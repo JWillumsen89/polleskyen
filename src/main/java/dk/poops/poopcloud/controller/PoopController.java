@@ -28,8 +28,14 @@ public class PoopController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("wishlists", wishListService.fetchAllWishLists());
+       // model.addAttribute("wishlists", wishListService.fetchAllWishLists());
         return "index";
+    }
+
+    @GetMapping("/wishlists")
+    public String showWishlistList(Model model) {
+        model.addAttribute("wishlists", wishListService.fetchAllWishLists());
+        return "wishlists";
     }
 
     @GetMapping("/showwishlist/{id}")
