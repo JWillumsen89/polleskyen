@@ -88,7 +88,8 @@ input[type=submit]:hover, input[type=button]:hover {
     .card_container {
         border-radius: 5px;
         padding: 20px;
-        margin-left: 25vw;
+        margin-left: 25%;
+        margin-right: 25%;
         margin-top: 5vh;
         background-color: #B1D3F1;
         width: 900px;
