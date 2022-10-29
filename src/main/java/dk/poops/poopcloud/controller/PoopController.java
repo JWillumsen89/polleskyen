@@ -64,7 +64,7 @@ public class PoopController {
     public String createWishlist(@ModelAttribute WishList wishList) {
         wishListService.saveWishList(wishList);
 
-        return "redirect:/";
+        return "redirect:/wishlists";
     }
 
     @PostMapping("/updatewishlist")
@@ -76,7 +76,7 @@ public class PoopController {
     @GetMapping("/deletewishlist/{id}")
     public String deleteWishList(@PathVariable("id") int id) {
         wishListService.deleteWishList(id);
-        return "redirect:/";
+        return "redirect:/wishlists";
     }
 
     @GetMapping("/showwishlist/createwish/{id}")

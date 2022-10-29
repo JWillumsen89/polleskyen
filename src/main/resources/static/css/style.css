@@ -388,3 +388,16 @@ div.container {
 .zoom:hover {
     transform: scale(1.1);
 }
+
+.imageTextBoxContainerFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.imageContainerFooter{
+    display: flex;
+    height: auto;
+    min-width: 2000px;
+}
