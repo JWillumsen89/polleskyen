@@ -107,11 +107,9 @@ public class PoopController {
     public String mail(@RequestParam("mail") String mail, @RequestParam("wishList") String wishList, @RequestParam("link") String link) throws MessagingException {
 
         try {
-            mailSender.send(mail, "You have been sent a wish list - " + wishList,
-                    """
-                            See all the wishes and reserve the one you are buying.
-                                              
-                            Click this link:""" + " " + link);
+            mailSender.send(mail, "Du har fået tilsendt ønskesedlen - " + wishList,
+                    """  
+                            Se ønskesedlen ved at klikke på dette link:""" + " " + link);
 
             return "mailsent";
         } catch (MailSendException e) {

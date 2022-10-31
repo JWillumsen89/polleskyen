@@ -23,7 +23,6 @@ WishListService {
 
   public void saveWishList(WishList wishList) {
     wishListJPARepo.save(wishList);
-
   }
 
   public void deleteWishList(int id) {
