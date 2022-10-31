@@ -45,7 +45,8 @@ body{
 }
 @media only screen and (min-width: 1000px) {
     .navbar_logo {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto auto;
         cursor: pointer;
         height: 80px;
         width: 100px
@@ -63,16 +64,16 @@ body{
 }
 
 .center_navbar {
-    width: 50%;
+    width: 45%;
     height: 90px;
     /*padding: 0 10px;*/
     /*background-color: black;*/
 }
 @media only screen and (min-width: 1000px) {
     .navbar-create {
-        padding-right: 60px;
+        padding-right: 70px;
         padding-top: 40px;
-        width: 100%;
+        width: 80%;
         text-align: end;
         flex-direction: column;
         display: block;
@@ -92,8 +93,10 @@ body{
 
 @media only screen and (min-width: 1000px) {
     .navbar-login {
-        /*width: 100%;*/
+        width: 15%;
         padding-top: 40px;
+        padding-right: 20px;
+        /*padding-left: 20px;*/
         text-align: end;
         flex-direction: column;
         display: block;
