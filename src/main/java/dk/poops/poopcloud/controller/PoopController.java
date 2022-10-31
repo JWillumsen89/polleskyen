@@ -19,7 +19,6 @@ public class PoopController {
 
     @Autowired
     MailSender mailSender;
-
     @Autowired
     WishListService wishListService;
     @Autowired
