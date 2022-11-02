@@ -36,7 +36,6 @@ public class PoopController {
         model.addAttribute("wishlists", wishListService.fetchAllWishLists());
         return "wishlists";
     }
-
     @GetMapping("/showwishlist/{id}")
     public String showWishList(@PathVariable("id") int id, Model model) {
         model.addAttribute("id", id);
